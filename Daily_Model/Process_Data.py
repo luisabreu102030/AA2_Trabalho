@@ -49,8 +49,7 @@ def prepare_data_ebola(df_raw_ebola):
     df_aux = df_aux.groupby(['Date']).sum()
 
     #ordenar data
-    #df_aux['Date'] = pd.to_datetime(df_aux['Date'])
-    #df_aux = df_aux.sort_values(by='Date')
+    df_aux = df_aux.sort_values(by='Date')
 
 
     pd.set_option('display.max_rows', None)
@@ -59,13 +58,21 @@ def prepare_data_ebola(df_raw_ebola):
 
 
 def unite_dataframe(df_data_diabetes, df_data_ebola):
-    #Diabetes tem valores \to\do o ano, ebola já não ....
-    df_aux = pd.merge(df_data_diabetes, df_data_ebola, how="left", on=["Date", "Date"])
+    #Diabetes tem valores \to\do o ano, ebola já não .... .reset_index serve para transfromar uma Serie em DataFrame
+    df_aux = pd.merge(df_data_diabetes.reset_index(), df_data_ebola.reset_index(), how="left", on=["Date", "Date"])
+
+
+    #tornar um DataFrame numa Serie
+    df_aux = df_aux.set_index("Date")
 
     pd.set_option('display.max_rows', None)
     print(df_aux)
-    return df_aux
+    #return df_aux
+    pass
 
+
+def to_csv_file(df_total):
+    df_total.to_csv("daily_dataset.csv")
 
 
 if __name__ == '__main__':
@@ -81,5 +88,7 @@ if __name__ == '__main__':
     df_total = unite_dataframe(df_data_diabetes, df_data_ebola)
 
     #DUVIDA: Como tratar os NaN. Que periodo de dias escolher ?
+    
+    #to_csv_file(df_total)
     
     

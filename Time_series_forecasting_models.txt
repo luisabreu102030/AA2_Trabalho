@@ -10,3 +10,7 @@ Técnica de preparação de datasets para forecasting:
 
 https://towardsdatascience.com/preparing-data-for-time-series-analysis-cd6f080e6836
 
+Técnica de exploração de datasets para forecasting:
+
+https://ourcodingclub.github.io/tutorials/pandas-time-series/
+
