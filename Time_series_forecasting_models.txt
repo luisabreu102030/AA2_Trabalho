@@ -5,3 +5,8 @@ https://machinelearningmastery.com/how-to-develop-deep-learning-models-for-univa
 https://www.sciencedirect.com/science/article/pii/S0957582020318516  
 https://www.oxford-man.ox.ac.uk/wp-content/uploads/2020/11/Time-Series-Forecasting-With-Deep-Learning_-A-Survey.pdf
 
+
+Técnica de preparação de datasets para forecasting:
+
+https://towardsdatascience.com/preparing-data-for-time-series-analysis-cd6f080e6836
+
