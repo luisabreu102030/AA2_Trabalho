@@ -67,8 +67,8 @@ def unite_dataframe(df_data_diabetes, df_data_ebola):
 
     pd.set_option('display.max_rows', None)
     print(df_aux)
-    #return df_aux
-    pass
+    return df_aux
+
 
 
 def to_csv_file(df_total):
@@ -89,6 +89,6 @@ if __name__ == '__main__':
 
     #DUVIDA: Como tratar os NaN. Que periodo de dias escolher ?
     
-    #to_csv_file(df_total)
+    to_csv_file(df_total)
     
     
