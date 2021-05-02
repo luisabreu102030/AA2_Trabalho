@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from datetime import datetime
 
+
 #Load dataset
 import requests
 import json
@@ -280,11 +281,130 @@ def prepare_data_covid(df_raw_covid):
     #Não tem duplicados
     #linhas e colunas do dataset:
     #print(df_aux.shape)
+
+
+    df_aux.columns = ['Date', 'confirmados', 'confirmados_arsnorte', 'confirmados_arscentro',
+     'confirmados_arslvt', 'confirmados_arsalentejo',
+     'confirmados_arsalgarve', 'confirmados_acores', 'confirmados_madeira',
+     'confirmados_novos', 'recuperados', 'obitos', 'internados_uci',
+     'obitos_arsnorte', 'obitos_arscentro', 'obitos_arslvt',
+     'obitos_arsalentejo', 'obitos_arsalgarve', 'obitos_acores',
+     'obitos_madeira', 'ativos', 'internados_enfermaria', 'confirmados_0_9',
+     'confirmados_10_19', 'confirmados_20_29', 'confirmados_30_39',
+     'confirmados_40_49', 'confirmados_50_59', 'confirmados_60_69',
+     'confirmados_70_79', 'confirmados_80_plus', 'obitos_0_9',
+     'obitos_10_19', 'obitos_20_29', 'obitos_30_39', 'obitos_40_49',
+     'obitos_50_59', 'obitos_60_69', 'obitos_70_79', 'obitos_80_plus']
+
+
     pd.set_option('display.max_rows', None)
     pd.set_option('display.max_columns', None)
-    print(df_aux)
+    #print(df_aux.columns)
+    #print(df_aux)
 
     return df_aux
+
+
+#append temperatures portugal datasets
+def append_temp_dataframes(df_raw_temp_2020_01, df_raw_temp_2020_02, df_raw_temp_2020_03, df_raw_temp_2020_04,
+                           df_raw_temp_2020_05, df_raw_temp_2020_06):
+    df_raw = df_raw_temp_2020_01.append(df_raw_temp_2020_02, ignore_index = True)
+    df_raw = df_raw.append(df_raw_temp_2020_03, ignore_index = True)
+    df_raw = df_raw.append(df_raw_temp_2020_04, ignore_index = True)
+    df_raw = df_raw.append(df_raw_temp_2020_05, ignore_index = True)
+    df_raw = df_raw.append(df_raw_temp_2020_06, ignore_index = True)
+
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_columns', None)
+    #print(df_raw)
+
+    return df_raw
+
+
+
+#Prepare temperatures médias Portugal
+
+#One hot encoding
+def condition_ohe_rain(condition):
+    res =0
+    if(condition == 'Rain' or condition == 'Rain, Partially cloudy'):
+        res=1
+
+    return res
+
+
+def condition_ohe_clear(condition):
+    res =0
+    if(condition == 'Clear'):
+        res=1
+
+    return res
+
+
+def condition_ohe_cloudy(condition):
+    res =0
+    if(condition == 'Rain, Partially cloudy' or condition == 'Partially cloudy'):
+        res=1
+
+    return res
+
+
+def prepare_data_temp(df_raw):
+    #print(df_raw.head)
+    df_aux = df_raw.copy()
+    #Ver se tem missing values
+    mv = df_aux.isnull().sum()
+    #print(mv)
+
+
+    #drop de colunas com muitos missing values e a coluna nome do país, colunas referentes á neve(têm apenas valores ='s a 0)
+    df_aux = df_aux.drop(columns=['Name','Wind Chill','Heat Index', 'Wind Gust', 'Snow', 'Snow Depth'])
+    #print(df_aux.shape)
+
+    #rename columns
+    df_aux.columns = ['Date', 'Max_Temp','Min_Temp','Temperature','Precipitation','Wind_Speed','Wind_Direction','Visibility','Cloud_Cover','Relative_Humidity','Conditions']
+
+    #one hot encoding weather conditions
+    df_aux['Rain'] = np.nan
+    df_aux['Clear'] = np.nan
+    df_aux['Partially_cloudy'] = np.nan
+    
+    df_aux['Rain'] = df_aux.apply(lambda x: condition_ohe_rain(x['Conditions']), axis=1)
+    df_aux['Clear'] = df_aux.apply(lambda x: condition_ohe_clear(x['Conditions']), axis=1)
+    df_aux['Partially_cloudy'] = df_aux.apply(lambda x: condition_ohe_cloudy(x['Conditions']), axis=1)
+
+    df_aux = df_aux.drop(columns='Conditions')
+
+    df_aux["Date"] = pd.to_datetime(df_aux["Date"]).dt.strftime('%d-%m-%Y')
+
+
+    #pd.set_option('display.max_rows', None)
+    #pd.set_option('display.max_columns', None)
+    #print(df_aux)
+    #print(df_aux.shape)
+    #print(df_aux['Conditions'].unique())
+
+    return df_aux
+
+
+
+def unifie_covid_datasets(df_data_covid, df_data_temp):
+
+    df_covid = pd.merge(df_data_covid,df_data_temp, on='Date', how='left')
+
+    #print(df_data_covid.shape)
+    #print(df_data_temp.shape)
+
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_columns', None)
+    #print(df_data_temp)
+    #print(df_covid)
+    #print(df_covid.shape)
+
+    #mv = df_covid.isnull().sum()
+    #print(mv)
+
+    return df_covid
 
 
 #####################################################
@@ -293,16 +413,16 @@ def prepare_data_covid(df_raw_covid):
 
 def to_csv_diabetes():
     ################## Diabetes Datasets #################################
-    df_raw_diabetes = load_datasets("Diabetes_2014_England.csv")
-    df_raw_temp_bognor_regis = load_normal_dataset("mean_temp_bognor_regis.csv")
-    df_raw_temp_blackpool = load_normal_dataset("mean_temp_blackpool.csv")
-    df_raw_temp_durham = load_normal_dataset("mean_temp_durham.csv")
-    df_raw_temp_nottingham = load_normal_dataset("mean_temp_nottingham.csv")
-    df_raw_ozone_hull = load_normal_dataset("hull_freetown_ozone.csv")
-    df_raw_ozone_norwich = load_normal_dataset("norwich_lakenfields_ozone.csv")
-    df_raw_ozone_wirral = load_normal_dataset("wirral_tranmere_ozone.csv")
-    df_raw_ozone_london = load_normal_dataset("london_ozone.csv")
-    df_raw_sugar = load_normal_dataset("sugar_price.csv")
+    df_raw_diabetes = load_datasets("daily_datasets/Diabetes_2014_England.csv")
+    df_raw_temp_bognor_regis = load_normal_dataset("daily_datasets/mean_temp_bognor_regis.csv")
+    df_raw_temp_blackpool = load_normal_dataset("daily_datasets/mean_temp_blackpool.csv")
+    df_raw_temp_durham = load_normal_dataset("daily_datasets/mean_temp_durham.csv")
+    df_raw_temp_nottingham = load_normal_dataset("daily_datasets/mean_temp_nottingham.csv")
+    df_raw_ozone_hull = load_normal_dataset("daily_datasets/hull_freetown_ozone.csv")
+    df_raw_ozone_norwich = load_normal_dataset("daily_datasets/norwich_lakenfields_ozone.csv")
+    df_raw_ozone_wirral = load_normal_dataset("daily_datasets/wirral_tranmere_ozone.csv")
+    df_raw_ozone_london = load_normal_dataset("daily_datasets/london_ozone.csv")
+
 
     # preparacao inicial de datasets diabetes
     f_data_diabetes = prepare_data_diabetes(df_raw_diabetes)
@@ -331,17 +451,40 @@ def to_csv_diabetes():
     df_diabetes = unifie_diabetes_datasets(f_data_diabetes, df_ozone_england, df_temp_england)
 
     #print(df_diabetes)
+    df_diabetes["Date"] = pd.to_datetime(df_diabetes["Date"])
+    df_diabetes = df_diabetes.set_index('Date')
+    print(df_diabetes.head())
     # datasets para csv file
     to_csv_file(df_diabetes, "daily_diabetes.csv")
 
+
+
 def to_csv_covid():
     ########################## Covid Dataset ###########################
-    df_raw_covid = load_normal_dataset("daily_covid_19_portugal.csv")
+    #load datasets
+    df_raw_covid = load_normal_dataset("daily_datasets/daily_covid_19_portugal.csv")
+    df_raw_temp_2020_01 = load_normal_dataset('daily_datasets/temp_portugal_01012020_31032020.csv')
+    df_raw_temp_2020_02 = load_normal_dataset('daily_datasets/temp_portugal_01042020_30062020.csv')
+    df_raw_temp_2020_03 = load_normal_dataset('daily_datasets/temp_portugal_01072020_30092020.csv')
+    df_raw_temp_2020_04 = load_normal_dataset('daily_datasets/temp_portugal_01102020_31122020.csv')
+    df_raw_temp_2020_05 = load_normal_dataset('daily_datasets/temp_portugal_01012021_31032021.csv')
+    df_raw_temp_2020_06 = load_normal_dataset('daily_datasets/temp_portugal_042021.csv')
+    #Prepare dataset covid
     df_data_covid = prepare_data_covid(df_raw_covid)
+    #append datasets temperaturas
+    df_raw_appended_temp = append_temp_dataframes(df_raw_temp_2020_01,df_raw_temp_2020_02,df_raw_temp_2020_03,df_raw_temp_2020_04,df_raw_temp_2020_05,df_raw_temp_2020_06)
+    #Prepare dataset temperaturas médias
+    df_data_temp = prepare_data_temp(df_raw_appended_temp)
+    #Unifie all datasets
+    df_covid = unifie_covid_datasets(df_data_covid, df_data_temp)
+    #print(df_covid.shape)
+
 
     #print(df_data_covid.columns)
+    df_covid["Date"] = pd.to_datetime(df_covid["Date"])
+    df_covid = df_covid.set_index('Date')
     # datasets para csv file
-    #to_csv_file(df_data_covid, "daily_covid.csv")
+    to_csv_file(df_covid, "daily_covid.csv")
 
 
 
@@ -352,9 +495,9 @@ def to_csv_covid():
 
 if __name__ == '__main__':
 
-    #to_csv_diabetes()
+    to_csv_diabetes()
     to_csv_covid()
-    pass
+
 
 
 
