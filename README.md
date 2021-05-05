@@ -43,11 +43,16 @@ os nossos modelos de previsão para Séries Temporais.
 
 ### Datasets diários
 
-#### Origem dos dados  ... dizer a proveniencia dos datasets utilizados
-##### Data1...falar dicionario de dados ... enumerar as variáveis do dataset usado
-##### data2...falar dicionario de dados
-#### Tratamento dos dados ..... Dizer que no ficheiroXXXX se encontra com mais detalhe o tratamento feito ao datase
-#### Datasets resultantes ..... dizer quais os datasets resultantes finais
+#### Origem dos dados  
+... dizer a proveniencia dos datasets utilizados
+##### Data1
+...falar dicionario de dados ... enumerar as variáveis do dataset usado
+##### Data2
+...falar dicionario de dados
+#### Tratamento dos dados
+ ..... Dizer que no ficheiroXXXX se encontra com mais detalhe o tratamento feito ao datase
+#### Datasets resultantes
+ ..... dizer quais os datasets resultantes finais
 
 
 ### Datasets semanais
