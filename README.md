@@ -17,3 +17,10 @@ A previsão do número de mortes será realizada utilizando Séries Temporais co
 * registos diários
 * registos semanais
 * registos mensai
+
+
+## Estrutura
+
+
+
+## Dicionário dos dados
