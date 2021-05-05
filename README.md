@@ -45,14 +45,14 @@ os nossos modelos de previsão para Séries Temporais.
 
 #### Origem dos dados  
 ... dizer a proveniencia dos datasets utilizados
-##### Data1
-...falar dicionario de dados ... enumerar as variáveis do dataset usado
-##### Data2
-...falar dicionario de dados
 #### Tratamento dos dados
  ..... Dizer que no ficheiroXXXX se encontra com mais detalhe o tratamento feito ao datase
-#### Datasets resultantes
- ..... dizer quais os datasets resultantes finais
+#### [daily_covid.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_covid.csv)
+...falar dicionario de dados ... enumerar as variáveis do dataset usado
+#### [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_diabetes.csv)
+...falar dicionario de dados
+
+
 
 
 ### Datasets semanais
