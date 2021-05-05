@@ -1,2 +1,7 @@
 # AA2_Trabalho
-Previsão de número de infetados/mortes com doenças pulmonares
+
+Previsão do número de mortes utilizando Séries Temporais com diferentes registos de periodos temporais, nomeadamente: 
+
+* registos diários
+* registos semanais
+* registos mensai
