@@ -21,15 +21,34 @@ A previsão do número de mortes será realizada utilizando Séries Temporais co
 
 ## Estrutura
 
-O repositório está dividio em quatro pastas:
+O repositório está dividido em quatro pastas:
 
 * [Resultados_Pesquisa](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Resultados_Pesquisa) : Onde é possível encontrar datasets pesquisados, bem como pesquisa acerca de como tratar os dados, bem como a criação
 d modelos machine learning capazes de  aceitar Séries Temporais;  
 * [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model) : Encontram-se os datasets e ficheiros com o código Python criados para tratar e criar datasets, que posteriormente serão explorados e utilizados
-para a concepção dos modelos de machine learning 
+para a concepção do modelo de machine learning capaz de fazer previsão diária de mortes; 
 * [Weekly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model): Encontram-se os datasets ficheiros com o código Python criados para tratar e criar datasets, que posteriormente serão explorados e utilizados
-para a concepção dos modelos de machine learning
+para a concepção do modelo de machine learning capaz de fazer previsão semanal de mortes;
 * [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model): Encontram-se os datasets ficheiros com o código Python criados para tratar e criar datasets, que posteriormente serão explorados e utilizados
-para a concepção dos modelos de machine learning
+para a concepção do modelo de machine learning capaz de fazer previsão mensal de mortes.
 
 ## Dicionário dos dados
+
+Para a concepção dos diferentes modelos de machine learning, foi necessário efectuar pesquisa acerca do que são Séries Temporais e quais os passos
+necessário a efectuar no tratamentos dos dados, para que estes ficassem em condições de serem utilizados nos modelos.
+No entanto, devido à falta de datasets que contivessem toda a possível informação necessária para uma boa previsão do modelo, foi necessário recolher dados de outro datasets
+e assim construir um dataset mais robusto e com maior potencial de bom desempenho na previsão de resultados.
+Nos subcapítulos seguintes, pormenorizamos mais sobre a proveniencia dos datasets bem como o tratamento que lhes foi aplicado para que fosse possível criar os datasets que irão mais tarde alimentar
+os nossos modelos de previsão para Séries Temporais.
+
+### Datasets diários
+
+#### Origem dos dados  ... dizer a proveniencia dos datasets utilizados
+##### Data1...falar dicionario de dados ... enumerar as variáveis do dataset usado
+##### data2...falar dicionario de dados
+#### Tratamento dos dados ..... Dizer que no ficheiroXXXX se encontra com mais detalhe o tratamento feito ao datase
+#### Datasets resultantes ..... dizer quais os datasets resultantes finais
+
+
+### Datasets semanais
+### Datasets mensais
