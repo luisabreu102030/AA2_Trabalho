@@ -16,11 +16,20 @@ A previsão do número de mortes será realizada utilizando Séries Temporais co
 
 * registos diários
 * registos semanais
-* registos mensai
+* registos mensa
 
 
 ## Estrutura
 
+O repositório está dividio em quatro pastas:
 
+* [Resultados_Pesquisa](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Resultados_Pesquisa) : Onde é possível encontrar datasets pesquisados, bem como pesquisa acerca de como tratar os dados, bem como a criação
+d modelos machine learning capazes de  aceitar Séries Temporais;  
+* [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model) : Encontram-se os datasets e ficheiros com o código Python criados para tratar e criar datasets, que posteriormente serão explorados e utilizados
+para a concepção dos modelos de machine learning 
+* [Weekly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model): Encontram-se os datasets ficheiros com o código Python criados para tratar e criar datasets, que posteriormente serão explorados e utilizados
+para a concepção dos modelos de machine learning
+* [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model): Encontram-se os datasets ficheiros com o código Python criados para tratar e criar datasets, que posteriormente serão explorados e utilizados
+para a concepção dos modelos de machine learning
 
 ## Dicionário dos dados
