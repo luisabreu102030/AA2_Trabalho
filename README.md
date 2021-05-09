@@ -211,7 +211,7 @@ Para ver em mais detalhe o tratamento e construção dos datasets ver os noteboo
 * [overdoses](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model/overdoses.ipynb)
 
 #### Dados
-* Uma explicação do conteúdo em [daa_covid.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Monthly_Model/data_covid.csv).
+* Uma explicação do conteúdo em [data_covid.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Monthly_Model/data_covid.csv).
 
 Nome da coluna | Significado | Possíveis valores
 ------------ | ------------- | -------------
