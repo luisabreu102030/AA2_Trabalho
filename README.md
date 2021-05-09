@@ -56,29 +56,29 @@ os nossos modelos de previsão para Séries Temporais.
 
 
 ### Datasets semanais
-
+* Todos os datasets usados na construção dos datasets obtidos encontram-se em [Datasets](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model/Datasets)
 #### Origem dos dados  
-[Dados de covid para Portugal](https://github.com/dssg-pt/covid19pt-data)
+* [Dados de covid para Portugal](https://github.com/dssg-pt/covid19pt-data)
 
-[Dados R(t) para Portugal](http://www.insa.min-saude.pt/category/areas-de-atuacao/epidemiologia/covid-19-curva-epidemica-e-parametros-de-transmissibilidade/)
+* [Dados R(t) para Portugal](http://www.insa.min-saude.pt/category/areas-de-atuacao/epidemiologia/covid-19-curva-epidemica-e-parametros-de-transmissibilidade/)
 
-[Dados Covid e outras doenças respiratórias para os Estados Unidos](https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Week-Ending-D/r8kw-7aab) 
+* [Dados Covid e outras doenças respiratórias para os Estados Unidos](https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Week-Ending-D/r8kw-7aab) 
 
-[Dados climatéricos obtidos para Portugal e Estados Unidos](https://www.visualcrossing.com/weather/weather-data-services#/login)
+* [Dados climatéricos obtidos para Portugal e Estados Unidos](https://www.visualcrossing.com/weather/weather-data-services#/login)
 
-[Dados de transporte/circulação nos Estados Unidos](https://www.bts.gov/covid-19/week-in-transportation)
+* [Dados de transporte/circulação nos Estados Unidos](https://www.bts.gov/covid-19/week-in-transportation)
 
-[Dados de voos mundiais](https://www.flightradar24.com/data/statistics)
+* [Dados de voos mundiais](https://www.flightradar24.com/data/statistics)
 
 #### Tratamento dos dados
 Para ver em mais detalhe o tratamento e construção dos datasets ver os notebooks:
 
-[covid_portugal](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/covid_portugal.ipynb)
+* [covid_portugal](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/covid_portugal.ipynb)
 
-[usa_dataset](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/usa_dataset.ipynb)
+* [usa_dataset](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/usa_dataset.ipynb)
 
 #### Dados
-Uma explicação do conteúdo em [covid_portugal.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/covid_portugal.csv).
+* Uma explicação do conteúdo em [covid_portugal.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/covid_portugal.csv).
 
 Nome da coluna | Significado | Possíveis valores
 ------------ | ------------- | -------------
@@ -161,7 +161,7 @@ Nome da coluna | Significado | Possíveis valores
 `flights`	| Número médio de voos ocorridos em todo mundo | Float >= 0
 `commercial_flights` | Número médio de voos comerciais ocorridos em todo mundo | Float >= 0
 
-Uma explicação do conteúdo em [usa_dataset.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/usa_dataset.csv).
+* Uma explicação do conteúdo em [usa_dataset.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/usa_dataset.csv).
 
 Nome da coluna | Significado | Possíveis valores
 ------------ | ------------- | -------------
