@@ -57,59 +57,65 @@ Todo o tratamento de dados aplicado aos datasets reunidos encontram-se, para uma
 Nome da coluna|Significado|Valores possíveis
 --------------|-----------|-----------------
 Date|Registo diário | AAAA-MM--DD
-confirmados| Casos confirmados de COVID-19|Inteiro >= 0
-confirmados_arsnorte|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Norte|Inteiro >= 0
-confirmados_arscentro|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Centro|Inteiro >= 0
-confirmados_arslvt|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Lisboa e Vale do Tejo|Inteiro >= 0
-confirmados_arsalentejo|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Alentejo|Inteiro >= 0
-confirmados_arsalgarve|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Algarve|Inteiro >= 0
-confirmados_acores|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Açores|Inteiro >= 0
-confirmados_madeira|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Madeira|Inteiro >= 0
-confirmados_novos|Novos casos confirmados de COVID-19|Inteiro >= 0
-recuperados|Número de pacientes recuperados|Inteiro >= 0
-obitos|Número de óbitos|Inteiro >= 0
-internados_uci| Número de internados em unidades de Cuidados Intensivos|Inteiro >= 0
-obitos_arsnorte|Número de óbitos na Autoridade Regional de Saúde Norte|Inteiro >= 0
-obitos_arscentro|Número de óbitos na Autoridade Regional de Saúde Centro|Inteiro >= 0
-obitos_arslvt|Número de óbitos na Autoridade Regional de Saúde Lisboa e Vale do tejo|Inteiro >= 0
-obitos_arsalentejo|Número de óbitos na Autoridade Regional de Saúde Alentejo|Inteiro >= 0
-obitos_arsalgarve|Número de óbitos na Autoridade Regional de Saúde Algarve|Inteiro >= 0
-obitos_acores|Número de óbitos na Autoridade Regional de Saúde Açores|Inteiro >= 0
-obitos_madeira|Número de óbitos na Autoridade Regional de Saúde Madeira|Inteiro >= 0
-ativos|Número de casos ativos |Inteiro >= 0
-internados_enfermaria|Número de pacientes COVID-19 internados em Enfermaria (não Unidades de Cuidados Intensivos)|Inteiro >= 0
-confirmados_0_9|Número total de casos confirmados na faixa etária 0-9 anos|Inteiro >= 0
-confirmados_10_19|Número total de casos confirmados na faixa etária 10-19 anos|Inteiro >= 0
-confirmados_20_29|Número total de casos confirmados na faixa etária 20-29 anos|Inteiro >= 0
-confirmados_30_39|Número total de casos confirmados na faixa etária 30-39 anos|Inteiro >= 0
-confirmados_40_49|Número total de casos confirmados na faixa etária 40-49 anos|Inteiro >= 0
-confirmados_50_59|Número total de casos confirmados na faixa etária 50-59 anos|Inteiro >= 0
-confirmados_60_69|Número total de casos confirmados na faixa etária 60-69 anos|Inteiro >= 0
-confirmados_70_79|Número total de casos confirmados na faixa etária 70-79 anos|Inteiro >= 0
-confirmados_80_plus|Número total de casos confirmados na faixa etária 80 anos para cima|Inteiro >= 0
-obitos_0_9|Número total de óbitos na faixa etária 0-9 anos|Inteiro >= 0
-obitos_10_19|Número total de óbitos na faixa etária 10-19 anos|Inteiro >= 0
-obitos_20_29|Número total de óbitos na faixa etária 20-29 anos|Inteiro >= 0
-obitos_30_39|Número total de óbitos na faixa etária 30-39 anos|Inteiro >= 0
-obitos_40_49|Número total de óbitos na faixa etária 40-49 anos|Inteiro >= 0
-obitos_50_59|Número total de óbitos na faixa etária 50-59 anos|Inteiro >= 0
-obitos_60_69|Número total de óbitos na faixa etária 60-69 anos|Inteiro >= 0
-obitos_70_79|Número total de óbitos na faixa etária 70-79 anos|Inteiro >= 0
-obitos_80_plus|Número total de óbitos na faixa etária 80 anos para cima|Inteiro >= 0
-Max_Temp|| temperatura máxima média ºC
-Min_Temp|| temperatura mínima média ºC
-Temperature|| temperatura média em ºC
-Precipitation||
-Wind_Speed||
-Wind_Direction||
-Visibility||
-Cloud_Cover||
-Relative_Humidity||
-Rain|| 0 ou 1
-Clear|| 0 ou 1
-Partially_cloudy|| 0 ou 1
+`confirmados`| Casos confirmados de COVID-19|Inteiro >= 0
+`confirmados_arsnorte`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Norte|Inteiro >= 0
+`confirmados_arscentro`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Centro|Inteiro >= 0
+`confirmados_arslvt`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Lisboa e Vale do Tejo|Inteiro >= 0
+`confirmados_arsalentejo`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Alentejo|Inteiro >= 0
+`confirmados_arsalgarve`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Algarve|Inteiro >= 0
+`confirmados_acores`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Açores|Inteiro >= 0
+`confirmados_madeira`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Madeira|Inteiro >= 0
+`confirmados_novos`|Novos casos confirmados de COVID-19|Inteiro >= 0
+`recuperados`|Número de pacientes recuperados|Inteiro >= 0
+`obitos`|Número de óbitos|Inteiro >= 0
+`internados_uci`| Número de internados em unidades de Cuidados Intensivos|Inteiro >= 0
+`obitos_arsnorte`|Número de óbitos na Autoridade Regional de Saúde Norte|Inteiro >= 0
+`obitos_arscentro`|Número de óbitos na Autoridade Regional de Saúde Centro|Inteiro >= 0
+`obitos_arslvt`|Número de óbitos na Autoridade Regional de Saúde Lisboa e Vale do tejo|Inteiro >= 0
+`obitos_arsalentejo`|Número de óbitos na Autoridade Regional de Saúde Alentejo|Inteiro >= 0
+`obitos_arsalgarve`|Número de óbitos na Autoridade Regional de Saúde Algarve|Inteiro >= 0
+`obitos_acores`|Número de óbitos na Autoridade Regional de Saúde Açores|Inteiro >= 0
+`obitos_madeira`|Número de óbitos na Autoridade Regional de Saúde Madeira|Inteiro >= 0
+`ativos|Número de casos ativos |Inteiro >= 0
+`internados_enfermaria`|Número de pacientes COVID-19 internados em Enfermaria (não Unidades de Cuidados Intensivos)|Inteiro >= 0
+`confirmados_0_9`|Número total de casos confirmados na faixa etária 0-9 anos|Inteiro >= 0
+`confirmados_10_19`|Número total de casos confirmados na faixa etária 10-19 anos|Inteiro >= 0
+`confirmados_20_29`|Número total de casos confirmados na faixa etária 20-29 anos|Inteiro >= 0
+`confirmados_30_39`|Número total de casos confirmados na faixa etária 30-39 anos|Inteiro >= 0
+`confirmados_40_49`|Número total de casos confirmados na faixa etária 40-49 anos|Inteiro >= 0
+`confirmados_50_59`|Número total de casos confirmados na faixa etária 50-59 anos|Inteiro >= 0
+`confirmados_60_69`|Número total de casos confirmados na faixa etária 60-69 anos|Inteiro >= 0
+`confirmados_70_79`|Número total de casos confirmados na faixa etária 70-79 anos|Inteiro >= 0
+`confirmados_80_plus`|Número total de casos confirmados na faixa etária 80 anos para cima|Inteiro >= 0
+`obitos_0_9`|Número total de óbitos na faixa etária 0-9 anos|Inteiro >= 0
+`obitos_10_19`|Número total de óbitos na faixa etária 10-19 anos|Inteiro >= 0
+`obitos_20_29`|Número total de óbitos na faixa etária 20-29 anos|Inteiro >= 0
+`obitos_30_39`|Número total de óbitos na faixa etária 30-39 anos|Inteiro >= 0
+`obitos_40_49`|Número total de óbitos na faixa etária 40-49 anos|Inteiro >= 0
+`obitos_50_59`|Número total de óbitos na faixa etária 50-59 anos|Inteiro >= 0
+`obitos_60_69`|Número total de óbitos na faixa etária 60-69 anos|Inteiro >= 0
+`obitos_70_79`|Número total de óbitos na faixa etária 70-79 anos|Inteiro >= 0
+`obitos_80_plus`|Número total de óbitos na faixa etária 80 anos para cima|Inteiro >= 0
+`Max_Temp`|Média de temperaturas máxima registadas| Float
+`Min_Temp`|Média de temperaturas minimas registadas| Float
+`Temperature`|Temperatura média (Max_Temp + Min_Temp)/2 | Float
+`Precipitation`|Média de precipitação registada | Float
+`Wind_Speed`|Média da velocidade do vento registada | Float
+`Wind_Direction`|Média da direção do vento registada | Float
+`Visibility`|Média da direção do vento registada | Float|
+`Cloud_Cover`| Média da nebulosidade registada | Float
+`Relative_Humidity`| Média da humidade registada | Float
+`Rain`|Registo de chuva| 0 ou 1
+`Clear`|Registo de céu limpo | 0 ou 1
+`Partially_cloudy`|Registo de céu parcialmente nublado| 0 ou 1
 #### [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_diabetes.csv)
-...falar dicionario de dados
+Nome da coluna|Significado|Valores possíveis
+--------------|-----------|-----------------
+`Date`|Registo diário | AAAA-MM--DD
+`All_Causes`|Número de óbitos por todas as causas|Inteiro >=0
+`Diabetes`|Número de óbitos por diabetes| Inteiro >= 0
+`Ozone`|Registo médio do nível de Ozono em Inglaterra| Float >=0
+`Temperature`|temperatura média em Inglaterra| Float
 
 
 
