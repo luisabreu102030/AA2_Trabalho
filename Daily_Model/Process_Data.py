@@ -155,8 +155,9 @@ def unifie_temp_mean(f_data_temp_bognor_regis,f_data_temp_blackpool,f_data_temp_
     df_diabetes = pd.merge(f_data_temp_bognor_regis,f_data_temp_blackpool, on='Date', how='inner')
     df_diabetes = pd.merge(df_diabetes, f_data_temp_durham, on='Date', how='inner')
     df_diabetes = pd.merge(df_diabetes, f_data_temp_nottingham, on='Date', how='inner')
-    #drop das colunas do ozone das cidades
+    #calculo da temperatura media
     df_diabetes['Temperature'] = df_diabetes.iloc[:, 1:4].mean(axis=1)
+    # drop das colunas de temperatura das cidades
     cols= [1,2,3,4]
     df_diabetes = df_diabetes.drop(df_diabetes.columns[cols], axis=1)
     #print(df_diabetes.shape)
