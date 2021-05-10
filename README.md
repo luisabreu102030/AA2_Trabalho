@@ -43,12 +43,71 @@ os nossos modelos de previsão para Séries Temporais.
 
 ### Datasets diários
 
-#### Origem dos dados  
-... dizer a proveniencia dos datasets utilizados
+#### Origem dos dados 
+##### Dados para a construção do dataset [daily_covid.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_covid.csv)
+* [DSSG - Data Science for Social Good Portugal](https://github.com/dssg-pt/covid19pt-data/blob/master/data.csv) : Dados referentes ao COVID-19 em Portugal a partir de 26-02-2020
+* [Visualcrossing](https://www.visualcrossing.com) : Dados atmosféricos em Portugal a partir de 01-01-2020
+##### Dados para a construção do dataset [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_diabetes.csv) 
+* [Office for national Statistics](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/adhocs/005259dailydeathoccurrencesbyallcausesanddiabetesmellitusicd10e10toe14englandandwales2012to2014) : Dados referentes a óbitos diários em Inglaterra de 01-01-2012 a 31-12-2014
+* [ECA - Euopean Climate Assessmente & Dataset](https://www.ecad.eu/dailydata/customquery.php): Dados referentes ás temperaturas registadas em Inglaterra
+* [Department for Environment Food & Rural Affairs - UK AIR](https://uk-air.defra.gov.uk/interactive-map): Dados referentes ao nível de Ozono registado em Inglaterra
 #### Tratamento dos dados
- ..... Dizer que no ficheiroXXXX se encontra com mais detalhe o tratamento feito ao datase
+Todo o tratamento de dados aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura, no ficheiro Jupyter Notebook [process_data](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/process_data.ipynb), apesar de tamber se encontrarem em ficheiro Python [Process_Data](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/Process_Data.py)
 #### [daily_covid.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_covid.csv)
-...falar dicionario de dados ... enumerar as variáveis do dataset usado
+Nome da coluna|Significado|Valores possíveis
+--------------|-----------|-----------------
+Date|Registo diário | AAAA-MM--DD
+confirmados| Casos confirmados de COVID-19|Inteiro >= 0
+confirmados_arsnorte|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Norte|Inteiro >= 0
+confirmados_arscentro|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Centro|Inteiro >= 0
+confirmados_arslvt|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Lisboa e Vale do Tejo|Inteiro >= 0
+confirmados_arsalentejo|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Alentejo|Inteiro >= 0
+confirmados_arsalgarve|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Algarve|Inteiro >= 0
+confirmados_acores|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Açores|Inteiro >= 0
+confirmados_madeira|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Madeira|Inteiro >= 0
+confirmados_novos|Novos casos confirmados de COVID-19|Inteiro >= 0
+recuperados|Número de pacientes recuperados|Inteiro >= 0
+obitos|Número de óbitos|Inteiro >= 0
+internados_uci| Número de internados em unidades de Cuidados Intensivos|Inteiro >= 0
+obitos_arsnorte|Número de óbitos na Autoridade Regional de Saúde Norte|Inteiro >= 0
+obitos_arscentro|Número de óbitos na Autoridade Regional de Saúde Centro|Inteiro >= 0
+obitos_arslvt|Número de óbitos na Autoridade Regional de Saúde Lisboa e Vale do tejo|Inteiro >= 0
+obitos_arsalentejo|Número de óbitos na Autoridade Regional de Saúde Alentejo|Inteiro >= 0
+obitos_arsalgarve|Número de óbitos na Autoridade Regional de Saúde Algarve|Inteiro >= 0
+obitos_acores|Número de óbitos na Autoridade Regional de Saúde Açores|Inteiro >= 0
+obitos_madeira|Número de óbitos na Autoridade Regional de Saúde Madeira|Inteiro >= 0
+ativos|Número de casos ativos |Inteiro >= 0
+internados_enfermaria|Número de pacientes COVID-19 internados em Enfermaria (não Unidades de Cuidados Intensivos)|Inteiro >= 0
+confirmados_0_9|Número total de casos confirmados na faixa etária 0-9 anos|Inteiro >= 0
+confirmados_10_19|Número total de casos confirmados na faixa etária 10-19 anos|Inteiro >= 0
+confirmados_20_29|Número total de casos confirmados na faixa etária 20-29 anos|Inteiro >= 0
+confirmados_30_39|Número total de casos confirmados na faixa etária 30-39 anos|Inteiro >= 0
+confirmados_40_49|Número total de casos confirmados na faixa etária 40-49 anos|Inteiro >= 0
+confirmados_50_59|Número total de casos confirmados na faixa etária 50-59 anos|Inteiro >= 0
+confirmados_60_69|Número total de casos confirmados na faixa etária 60-69 anos|Inteiro >= 0
+confirmados_70_79|Número total de casos confirmados na faixa etária 70-79 anos|Inteiro >= 0
+confirmados_80_plus|Número total de casos confirmados na faixa etária 80 anos para cima|Inteiro >= 0
+obitos_0_9|Número total de óbitos na faixa etária 0-9 anos|Inteiro >= 0
+obitos_10_19|Número total de óbitos na faixa etária 10-19 anos|Inteiro >= 0
+obitos_20_29|Número total de óbitos na faixa etária 20-29 anos|Inteiro >= 0
+obitos_30_39|Número total de óbitos na faixa etária 30-39 anos|Inteiro >= 0
+obitos_40_49|Número total de óbitos na faixa etária 40-49 anos|Inteiro >= 0
+obitos_50_59|Número total de óbitos na faixa etária 50-59 anos|Inteiro >= 0
+obitos_60_69|Número total de óbitos na faixa etária 60-69 anos|Inteiro >= 0
+obitos_70_79|Número total de óbitos na faixa etária 70-79 anos|Inteiro >= 0
+obitos_80_plus|Número total de óbitos na faixa etária 80 anos para cima|Inteiro >= 0
+Max_Temp|| temperatura máxima média ºC
+Min_Temp|| temperatura mínima média ºC
+Temperature|| temperatura média em ºC
+Precipitation||
+Wind_Speed||
+Wind_Direction||
+Visibility||
+Cloud_Cover||
+Relative_Humidity||
+Rain|| 0 ou 1
+Clear|| 0 ou 1
+Partially_cloudy|| 0 ou 1
 #### [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_diabetes.csv)
 ...falar dicionario de dados
 
