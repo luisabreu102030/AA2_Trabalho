@@ -297,6 +297,11 @@ def prepare_data_covid(df_raw_covid):
      'obitos_10_19', 'obitos_20_29', 'obitos_30_39', 'obitos_40_49',
      'obitos_50_59', 'obitos_60_69', 'obitos_70_79', 'obitos_80_plus']
 
+    df_aux = df_aux.set_index("Date")
+
+    #Colocar a diferença em vezz de valor acumulado nos dias.
+    df_aux = df_aux.diff().fillna(0)
+
 
     pd.set_option('display.max_rows', None)
     pd.set_option('display.max_columns', None)
@@ -470,22 +475,33 @@ def to_csv_covid():
     df_raw_temp_2020_04 = load_normal_dataset('daily_datasets/temp_portugal_01102020_31122020.csv')
     df_raw_temp_2020_05 = load_normal_dataset('daily_datasets/temp_portugal_01012021_31032021.csv')
     df_raw_temp_2020_06 = load_normal_dataset('daily_datasets/temp_portugal_042021.csv')
+
     #Prepare dataset covid
     df_data_covid = prepare_data_covid(df_raw_covid)
+
+    #Prepare datasets meteorologicos
+    #print(df_data_covid.head())
     #append datasets temperaturas
     df_raw_appended_temp = append_temp_dataframes(df_raw_temp_2020_01,df_raw_temp_2020_02,df_raw_temp_2020_03,df_raw_temp_2020_04,df_raw_temp_2020_05,df_raw_temp_2020_06)
     #Prepare dataset temperaturas médias
     df_data_temp = prepare_data_temp(df_raw_appended_temp)
+
+
+    #Prepare datasets aviação
+
+
+
     #Unifie all datasets
     df_covid = unifie_covid_datasets(df_data_covid, df_data_temp)
-    #print(df_covid.shape)
+    #print(df_covid.head(30))
 
 
     #print(df_data_covid.columns)
-    df_covid["Date"] = pd.to_datetime(df_covid["Date"])
+    #df_covid["Date"] = pd.to_datetime(df_covid["Date"])
     df_covid = df_covid.set_index('Date')
+    #print(df_covid.head(40))
     # datasets para csv file
-    to_csv_file(df_covid, "daily_covid.csv")
+    #to_csv_file(df_covid, "daily_covid.csv")
 
 
 
@@ -496,7 +512,7 @@ def to_csv_covid():
 
 if __name__ == '__main__':
 
-    to_csv_diabetes()
+    #to_csv_diabetes()
     to_csv_covid()
 
 
