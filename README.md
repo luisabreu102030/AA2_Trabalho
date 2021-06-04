@@ -238,7 +238,7 @@ Nome da coluna|Significado|Valores possíveis
 #### Origem dos dados 
 
 * [Dados de overdoses nos Estados Unidos da América](https://catalog.data.gov/dataset/vsrr-provisional-drug-overdose-death-counts) 
-* * [Dados climatéricos obtidos para Estados Unidos da América](https://www.visualcrossing.com/weather/weather-data-services#/login)
+* [Dados climatéricos obtidos para Estados Unidos da América](https://www.visualcrossing.com/weather/weather-data-services#/login)
 #### Tratamento dos dados
 Para ver em mais detalhe o tratamento e construção dos datasets ver o notebooks:
 
