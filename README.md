@@ -114,7 +114,7 @@ Date|Registo diário | AAAA-MM--DD
 `Clear`|Registo de céu limpo | 0 ou 1
 `Partially_cloudy`|Registo de céu parcialmente nublado| 0 ou 1
 
-Esta descrição de dataset é referente a um registo com frequencia diária, no entanto para ser utilizado como dataset de frequencia de regito semanal e mensal algumas alterações foram necessárias realizar.
+**Nota :** Esta descrição de dataset é referente a um registo de dados com frequencia diária, no entanto para ser utilizado como dataset de frequencia de regito semanal e mensal algumas alterações foram necessárias realizar.
 Para o dataset semanal, o seu registo de semana corresponde à data do primeiro dia da semana, no entanto o valor registado para essa semana é o somatório dos dias dessa semana. Semelhante alteração foi feita para obtermos um dataset com registos mensais, mas aqui a data de registo é referente ao último dia do mês e o seu valor é o somatório do valor dos dias até ao último dia do mês.
 
 
