@@ -132,6 +132,10 @@ Neste projeto para a previsão do número de óbitos diários, semanais e mensai
 
 Todos os modelos testados, em conjunto com as suas otimizações experimentadas e resultados obtidos, encontram-se divididos em 3 pastas de ficheiros [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model), [Weekly_model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model) e [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model).
 
+## Relatório
+
+No ficheiro [relatorio.pdf](https://github.com/luisabreu102030/AA2_Trabalho) é possível encontrar a discussão dos resultados obtidos.
+
 #Hugo decide se quer manter ou apagar ou adicionar ao diario
 ### Datasets semanais AAAAAAAAAAAAAAAAAAAAAAAAAAAAA????????????????????????????????????
 * Todos os datasets usados na construção dos datasets obtidos encontram-se em [Datasets](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model/Datasets)
