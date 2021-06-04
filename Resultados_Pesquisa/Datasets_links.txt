@@ -37,6 +37,9 @@ Time series year 2013-2018 multiplas causas.
 
 
 
+######### NEW #########
+https://www.kaggle.com/gpreda/covid-world-vaccination-progress  -  Vacinação no mundo
+
 
 
 
