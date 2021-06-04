@@ -1,7 +1,7 @@
 # Proposta C.2 - Previsão do número de infetados/mortes de doenças pulmonares
 
 ## Contexto
-
+  
 A criação de modelos de previsão sobre uma doença pode auxiliar uma melhor resposta no
 combate à doença. Atualmente a pandemia COVID tem sobrecarregado os sistemas de saúde
 consumindo a maioria dos seus recursos. Porém existem outras doenças pulmonares como a
@@ -40,10 +40,10 @@ e assim construir um dataset mais robusto e com maior potencial de bom desempenh
 Nos subcapítulos seguintes, pormenorizamos mais sobre a proveniencia dos datasets bem como o tratamento que lhes foi aplicado para que fosse possível criar os datasets que irão mais tarde alimentar
 os nossos modelos de previsão para Séries Temporais. O dataset criado contem registos cuja sua **frequencia é diária**
 
-### Datasets auxiliares
+### Datasets utilizados
 
 #### Origem dos dados 
-##### Dados para a construção do dataset [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/covid_final.csv)
+ Aqui são referênciados os ados para a construção do dataset [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/covid_final.csv) :
 
 
 * [DSSG - Data Science for Social Good Portugal](https://github.com/dssg-pt/covid19pt-data/blob/master/data.csv) : Dados referentes ao COVID-19 em Portugal a partir de 26-02-2020;
@@ -55,7 +55,7 @@ os nossos modelos de previsão para Séries Temporais. O dataset criado contem r
 #### Tratamento e exploração dos dados
 Toda a exploração realizada sobre os dados e seu consequente tratamento aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura em ficheiros Jupyter Notebook na pasta [Tratamento_Exploracao](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao).
 
-#### Dataset final : [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/)
+#### Dataset final obtido : [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/)
 
 Nesta secção é apresentada a descrição dos dados presentes em covid_final.csv. Todas as features presentes neste dataset foram selecionadas recorrendo a técnicas de **feature selection** que se encontram em [feature_selection.ipymb](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/feature_selection.ipymb). Previamente à escolha destes atributos, os dados sofreram reparações por forma a tratar todos os missing values e/ou timesteps em falta.
 
@@ -124,9 +124,13 @@ Neste projeto para a previsão do número de óbitos diários, semanais e mensai
 
 * Recurrent Neural Network LSTM
 
+ ![Tux, the Linux mascot](/assets/images/lstm.png)
+
 * Convolutional neural Network
 
-Todos os modelos testados, em conjunto com as suas otimizações experimentadas, encontram-se divididas em 3 pastas de ficheiros [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model), [Weekly_model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model) e [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model).
+ ![Tux, the Linux mascot](/assets/images/lstm.png)
+
+Todos os modelos testados, em conjunto com as suas otimizações experimentadas e resultados obtidos, encontram-se divididos em 3 pastas de ficheiros [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model), [Weekly_model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model) e [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model).
 
 #Hugo decide se quer manter ou apagar ou adicionar ao diario
 ### Datasets semanais AAAAAAAAAAAAAAAAAAAAAAAAAAAAA????????????????????????????????????
