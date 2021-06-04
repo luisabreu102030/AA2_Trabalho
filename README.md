@@ -55,7 +55,7 @@ os nossos modelos de previsão para Séries Temporais. O dataset criado contem r
 #### Tratamento e exploração dos dados
 Toda a exploração realizada sobre os dados e seu consequente tratamento aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura em ficheiros Jupyter Notebook na pasta [Tratamento_Exploracao](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao).
 
-#### [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/)
+#### Dataset final : [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/)
 
 Nesta secção é apresentada a descrição dos dados presentes em covid_final.csv. Todas as features presentes neste dataset foram selecionadas recorrendo a técnicas de **feature selection** que se encontram em [feature_selection.ipymb](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/feature_selection.ipymb). Previamente à escolha destes atributos, os dados sofreram reparações por forma a tratar todos os missing values e/ou timesteps em falta.
 
