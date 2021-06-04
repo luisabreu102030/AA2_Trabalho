@@ -21,16 +21,15 @@ A previsão do número de mortes será realizada utilizando Séries Temporais co
 
 ## Estrutura
 
-O repositório está dividido em quatro pastas:
+O repositório está dividido em 6 pastas:
 
-* [Resultados_Pesquisa](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Resultados_Pesquisa) : Onde é possível encontrar datasets pesquisados, bem como pesquisa acerca de como tratar os dados, bem como a criação
-d modelos machine learning capazes de  aceitar Séries Temporais;  
-* [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model) : Encontram-se os datasets e ficheiros com o código Python criados para tratar e criar datasets, que posteriormente serão explorados e utilizados
+* [Datasets_utilizados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_utilizados) : Onde é possível encontrar os datasets que compõem o dataset final que será utilizado na previsão do número de óbitos em Portugal;
+* [Datasets_ignorados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_ignorados) : Encontram-se os datasets pesquisados, e datasets já formados para outras doenças, no entanto que devido à falta de mais features foram por nós ignorados.
+* [Tratamento_exploração](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao) : Encontra-se todo o processo de exploração de dados, bem como todo o seu tratamento no que diz respeito a missing values e à sua tranformação para datasets com registos de frequência diária, semanal e mensal.
+* [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model) : Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos em Portugal. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são diários.
 para a concepção do modelo de machine learning capaz de fazer previsão diária de mortes; 
-* [Weekly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model): Encontram-se os datasets ficheiros com o código Python criados para tratar e criar datasets, que posteriormente serão explorados e utilizados
-para a concepção do modelo de machine learning capaz de fazer previsão semanal de mortes;
-* [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model): Encontram-se os datasets ficheiros com o código Python criados para tratar e criar datasets, que posteriormente serão explorados e utilizados
-para a concepção do modelo de machine learning capaz de fazer previsão mensal de mortes.
+* [Weekly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model): Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos em Portugal. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são semanais.
+* [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model): Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos em Portugal. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são mensais.
 
 ## Dicionário dos dados
 
@@ -39,21 +38,27 @@ necessário a efectuar no tratamentos dos dados, para que estes ficassem em cond
 No entanto, devido à falta de datasets que contivessem toda a possível informação necessária para uma boa previsão do modelo, foi necessário recolher dados de outro datasets
 e assim construir um dataset mais robusto e com maior potencial de bom desempenho na previsão de resultados.
 Nos subcapítulos seguintes, pormenorizamos mais sobre a proveniencia dos datasets bem como o tratamento que lhes foi aplicado para que fosse possível criar os datasets que irão mais tarde alimentar
-os nossos modelos de previsão para Séries Temporais.
+os nossos modelos de previsão para Séries Temporais. O dataset criado contem registos cuja sua **frequencia é diária**
 
-### Datasets diários
+### Datasets auxiliares
 
 #### Origem dos dados 
-##### Dados para a construção do dataset [daily_covid.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_covid.csv)
-* [DSSG - Data Science for Social Good Portugal](https://github.com/dssg-pt/covid19pt-data/blob/master/data.csv) : Dados referentes ao COVID-19 em Portugal a partir de 26-02-2020
-* [Visualcrossing](https://www.visualcrossing.com) : Dados atmosféricos em Portugal a partir de 01-01-2020
-##### Dados para a construção do dataset [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_diabetes.csv) 
-* [Office for national Statistics](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/adhocs/005259dailydeathoccurrencesbyallcausesanddiabetesmellitusicd10e10toe14englandandwales2012to2014) : Dados referentes a óbitos diários em Inglaterra de 01-01-2012 a 31-12-2014
-* [ECA - Euopean Climate Assessmente & Dataset](https://www.ecad.eu/dailydata/customquery.php): Dados referentes ás temperaturas registadas em Inglaterra
-* [Department for Environment Food & Rural Affairs - UK AIR](https://uk-air.defra.gov.uk/interactive-map): Dados referentes ao nível de Ozono registado em Inglaterra
-#### Tratamento dos dados
-Todo o tratamento de dados aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura, no ficheiro Jupyter Notebook [process_data](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/process_data.ipynb), apesar de tamber se encontrarem em ficheiro Python [Process_Data](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/Process_Data.py)
-#### [daily_covid.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_covid.csv)
+##### Dados para a construção do dataset [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/covid_final.csv)
+
+
+* [DSSG - Data Science for Social Good Portugal](https://github.com/dssg-pt/covid19pt-data/blob/master/data.csv) : Dados referentes ao COVID-19 em Portugal a partir de 26-02-2020;
+* [Visualcrossing](https://www.visualcrossing.com) : Dados atmosféricos em Portugal a partir de 01-01-2020;
+* [COVID-19 World Vaccination Progress](https://www.kaggle.com/gpreda/covid-world-vaccination-progress) : Total diário de vacinação do COVID-19 no mundo;
+* [SNS - Serviço Nacional de Saúde Portugal](https://transparencia.sns.gov.pt/explore/dataset/acionamentos-de-meios-de-emergencia-medica/table/?sort=periodo&fbclid=IwAR1Q59_J2oyrap0gqnxUrqC2dKeSKev8seWiNqMPjsisxL4a_bgUMwKAgfE&refine.periodo=2021) : Evolução diária dos acionamentos de meios de emergência Médica;
+* [Coronavirus Source Data from OurWorldInData.](https://ourworldindata.org/coronavirus-source-data) : Dados relativos ao COVID-19, provenientes de vários países do mundo.
+
+#### Tratamento e exploração dos dados
+Toda a exploração realizada sobre os dados e seu consequente tratamento aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura em ficheiros Jupyter Notebook na pasta [Tratamento_Exploracao](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao).
+
+#### [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/)
+
+Nesta secção é apresentada a descrição dos dados presentes em covid_final.csv. Todas as features presentes neste dataset foram selecionadas recorrendo a técnicas de **feature selection** que se encontram em [feature_selection.ipymb](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/feature_selection.ipymb). Previamente à escolha destes atributos, os dados sofreram reparações por forma a tratar todos os missing values e/ou timesteps em falta.
+
 Nome da coluna|Significado|Valores possíveis
 --------------|-----------|-----------------
 Date|Registo diário | AAAA-MM--DD
@@ -108,19 +113,23 @@ Date|Registo diário | AAAA-MM--DD
 `Rain`|Registo de chuva| 0 ou 1
 `Clear`|Registo de céu limpo | 0 ou 1
 `Partially_cloudy`|Registo de céu parcialmente nublado| 0 ou 1
-#### [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_diabetes.csv)
-Nome da coluna|Significado|Valores possíveis
---------------|-----------|-----------------
-`Date`|Registo diário | AAAA-MM--DD
-`All_Causes`|Número de óbitos por todas as causas|Inteiro >=0
-`Diabetes`|Número de óbitos por diabetes| Inteiro >= 0
-`Ozone`|Registo médio do nível de Ozono em Inglaterra| Float >=0
-`Temperature`|temperatura média em Inglaterra| Float
+
+Esta descrição de dataset é referente a um registo com frequencia diária, no entanto para ser utilizado como dataset de frequencia de regito semanal e mensal algumas alterações foram necessárias realizar.
+Para o dataset semanal, o seu registo de semana corresponde à data do primeiro dia da semana, no entanto o valor registado para essa semana é o somatório dos dias dessa semana. Semelhante alteração foi feita para obtermos um dataset com registos mensais, mas aqui a data de registo é referente ao último dia do mês e o seu valor é o somatório do valor dos dias até ao último dia do mês.
 
 
+## Modelos deep learning
+
+Neste projeto para a previsão do número de óbitos diários, semanais e mensais dois tipos de modelos de previsão:
+
+* Recurrent Neural Network LSTM
+
+* Convolutional neural Network
+
+Todos os modelos testados, em conjunto com as suas otimizações experimentadas, encontram-se divididas em 3 pastas de ficheiros [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model), [Weekly_model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model) e [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model).
 
 
-### Datasets semanais
+### Datasets semanais AAAAAAAAAAAAAAAAAAAAAAAAAAAAA????????????????????????????????????
 * Todos os datasets usados na construção dos datasets obtidos encontram-se em [Datasets](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model/Datasets)
 #### Origem dos dados  
 * [Dados de covid para Portugal](https://github.com/dssg-pt/covid19pt-data)
@@ -148,81 +157,10 @@ Para ver em mais detalhe o tratamento e construção dos datasets ver os noteboo
 Nome da coluna | Significado | Possíveis valores
 ------------ | ------------- | -------------
 `data` | Data do primeiro dia da semana em questão | YYYY-MM-DD
-`confirmados_arsnorte` | Novos Casos confirmados na ARS Norte      | Inteiro >= 0 |
-`confirmados_arscentro` | Novos Casos confirmados na ARS Centro      | Inteiro >= 0 |
-`confirmados_arslvt` | Novos Casos confirmados na ARS Lisboa e Vale do Tejo      | Inteiro >= 0 |
-`confirmados_arsalentejo` | Novos Casos confirmados na ARS Alentejo     | Inteiro >= 0 |
-`confirmados_arsalgarve` | Novos Casos confirmados na ARS Algarve    | Inteiro >= 0 |
-`confirmados_acores` | Novos Casos confirmados na Região Autónoma dos Açores | Inteiro >= 0 |
-`confirmados_madeira` | Novos Casos confirmados na Região Autónoma da Madeira  |  Inteiro >= 0 |
-`confirmados_novos` | Número de novos casos confirmados comparativamente ao dia anterior | Inteiro >= 0 |
-`recuperados` | Novos casos recuperados | Inteiro >= 0 
-`obitos` | Número de óbitos | Inteiro >= 0
-`internados` | Número de pacientes COVID-19 internados | Inteiro (caso o número seja negativo significa que o número de internados diminui relativamente à semana passada)
-`internados_uci` | Número de pacientes COVID-19 internados em Unidades de Cuidados Intensivos | Inteiro (caso o número seja negativo significa que o número de internados em Unidades de Cuidados Intensivos diminui relativamente à semana passada)
-`vigilancia` | Número de casos sob vigilância pelas autoridades de saúde | Inteiro (caso o número seja negativo significa que o número de casos sob vigilância diminui relativamente à semana passada)
-`confirmados_0_9_f` | Número de novos casos confirmados do sexo feminino na faixa etária 0-9 anos | Inteiro >= 0
-`confirmados_0_9_m` | Número de novos casos confirmados do sexo masculino na faixa etária 0-9 anos | Inteiro >= 0 
-`confirmados_10_19_f` | Número de novos casos confirmados do sexo feminino na faixa etária 10-19 anos | Inteiro >= 0 
-`confirmados_10_19_m` | Número de novos casos confirmados do sexo masculino na faixa etária 10-19 anos | Inteiro >= 0 
-`confirmados_20_29_f` | Número de novos casos confirmados do sexo feminino na faixa etária 20-29 anos | Inteiro >= 0 
-`confirmados_20_29_m` | Número de novos casos confirmados do sexo masculino na faixa etária 20-29 anos | Inteiro >= 0 
-`confirmados_30_39_f` | Número de novos casos confirmados do sexo feminino na faixa etária 30-39 anos | Inteiro >= 0 
-`confirmados_30_39_m` | Número de novos casos confirmados do sexo masculino na faixa etária 30-39 anos | Inteiro >= 0 
-`confirmados_40_49_f` | Número de novos casos confirmados do sexo feminino na faixa etária 40-49 anos | Inteiro >= 0 
-`confirmados_40_49_m` | Número de novos casos confirmados do sexo masculino na faixa etária 40-49 anos | Inteiro >= 0 
-`confirmados_50_59_f` | Número de novos casos confirmados do sexo feminino na faixa etária 50-59 anos | Inteiro >= 0 
-`confirmados_50_59_m` | Número de novos casos confirmados do sexo masculino na faixa etária 50-59 anos | Inteiro >= 0 
-`confirmados_60_69_f` | Número de novos casos confirmados do sexo feminino na faixa etária 60-69 anos | Inteiro >= 0 
-`confirmados_60_69_m` | Número de novos casos confirmados do sexo masculino na faixa etária 60-69 anos | Inteiro >= 0 
-`confirmados_70_79_f` | Número de novos casos confirmados do sexo feminino na faixa etária 70-79 anos | Inteiro >= 0 
-`confirmados_70_79_m` | Número de novos casos confirmados do sexo masculino na faixa etária 70-79 anos | Inteiro >= 0 
-`confirmados_80_plus_f` | Número de novos casos confirmados do sexo feminino na faixa etária 80+ anos | Inteiro >= 0 
-`confirmados_80_plus_m` | Número de novos casos confirmados do sexo masculino na faixa etária 80+ anos | Inteiro >= 0 
-`confirmados_f` | Número de novos confirmados do sexo feminino | Inteiro >= 0 
-`confirmados_m` | Número de novos confirmados do sexo masculino | Inteiro >= 0 
-`obitos_arsnorte` | Novos Óbitos na ARS Norte      | Inteiro >= 0 
-`obitos_arscentro` | Novos Óbitos na ARS Centro      | Inteiro >= 0 
-`obitos_arslvt` | Novos Óbitos na ARS Lisboa e Vale do Tejo      | Inteiro >= 0 
-`obitos_arsalentejo` | Novos Óbitos na ARS Alentejo     | Inteiro >= 0 
-`obitos_arsalgarve` | Novos Óbitos na ARS Algarve    | Inteiro >= 0 
-`obitos_acores` | Novos Óbitos na Região Autónoma dos Açores | Inteiro >= 0 
-`obitos_madeira` | Novos Óbitos na Região Autónoma da Madeira  |  Inteiro >= 0 
-`obitos_0_9_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 0-9 anos | Inteiro >= 0
-`obitos_0_9_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 0-9 anos | Inteiro >= 0
-`obitos_10_19_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 10-19 anos | Inteiro >= 0 
-`obitos_10_19_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 10-19 anos | Inteiro >= 0 
-`obitos_20_29_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 20-29 anos | Inteiro >= 0 
-`obitos_20_29_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 20-29 anos | Inteiro >= 0 
-`obitos_30_39_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 30-39 anos | Inteiro >= 0 
-`obitos_30_39_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 30-39 anos | Inteiro >= 0 
-`obitos_40_49_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 40-49 anos | Inteiro >= 0 
-`obitos_40_49_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 40-49 anos | Inteiro >= 0
-`obitos_50_59_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 50-59 anos | Inteiro >= 0 
-`obitos_50_59_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 50-59 anos | Inteiro >= 0 
-`obitos_60_69_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 60-69 anos | Inteiro >= 0 
-`obitos_60_69_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 60-69 anos | Inteiro >= 0 
-`obitos_70_79_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 70-79 anos | Inteiro >= 0 
-`obitos_70_79_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 70-79 anos | Inteiro >= 0 
-`obitos_80_plus_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 80+ anos | Inteiro >= 0 
-`obitos_80_plus_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 80+ anos | Inteiro >= 0 
-`obitos_f` | Número de novos óbitos de pacientes do sexo feminino | Inteiro >= 0 
-`obitos_m` | Número de novos óbitos de pacientes do sexo masculino | Inteiro >= 0
-`ativos` | Número de novos casos ativos | Inteiro (caso o número seja negativo significa que o número de casos ativos diminui relativamente à semana passada)
+
 `internados_enfermaria` | Número de pacientes COVID-19 internados em Enfermaria (não Unidades de Cuidados Intensivos) | Inteiro (caso o número seja negativo significa que o número de internados na enfermaria diminui relativamente à semana passada)
 `Rt_número_de_reprodução` | R(t) nacional | Float >= 0
-`Max_Temp` | Média de temperaturas máxima registadas | Float
-`Min_Temp` | Média de temperaturas mínima registada | Float
-`Temperature`| Média de temperatura registada | Float
-`Precipitation` | Média de precipitação registada | Float
-`Wind_Speed` | Média da velocidade do vento registada | Float
-`Wind_Direction` | Média da direção do vento registada | Float
-`Visibility` | Média da visibilidade registada | Float
-`Cloud_Cover` | Média da nebulosidade registada | Float
-`Relative_Humidity` | Média da humidade registada | Float
-`Rain` | Registo de chuva | Float
-`Clear` | Registo de céu limpo | Float
-`Partially_cloudy` | Registado de céu nublado | Float
+
 `flights`	| Número médio de voos ocorridos em todo mundo | Float >= 0
 `commercial_flights` | Número médio de voos comerciais ocorridos em todo mundo | Float >= 0
 
@@ -258,99 +196,47 @@ Nome da coluna | Significado | Possíveis valores
 `Clear` | Registo de céu limpo | Float
 `Partially_cloudy` | Registado de céu nublado | Float
 
+*****SADJZKÇVN BZDKLFJBVN DFKJVBNOFNBBAEOÇFBN BAÇJRBN EOAI N''?????????????????????????????*****
 
-### Datasets mensais
-* Todos os datasets usados na construção dos datasets obtidos encontram-se em [Datasets](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model/datasets_monthly)
-#### Origem dos dados  
-* [Dados de covid para Portugal](https://github.com/dssg-pt/covid19pt-data)
+# NOTA: [Datasets ignorados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_ignorados)
+Para além dos datasets acima referidos e documentados, foram criados ainda outros datasets que não foram utilizados no projeto devido à falta de dados que solidificacem o interesse nos mesmo. Como tal deixamos neste repositório esses mesmo datasets, com a esperança de poderem ajudar algum researcher.
 
-* [Dados de overdoses nos Estados Unidos da América](https://catalog.data.gov/dataset/vsrr-provisional-drug-overdose-death-counts) 
-
-* [Dados climatéricos obtidos para Portugal e Estados Unidos](https://www.visualcrossing.com/weather/weather-data-services#/login)
+### Datasets diários 
+#### Origem dos dados 
+##### Dados para a construção do dataset [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_diabetes.csv) 
+* [Office for national Statistics](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/adhocs/005259dailydeathoccurrencesbyallcausesanddiabetesmellitusicd10e10toe14englandandwales2012to2014) : Dados referentes a óbitos diários em Inglaterra de 01-01-2012 a 31-12-2014
+* [ECA - Euopean Climate Assessmente & Dataset](https://www.ecad.eu/dailydata/customquery.php): Dados referentes ás temperaturas registadas em Inglaterra
+* [Department for Environment Food & Rural Affairs - UK AIR](https://uk-air.defra.gov.uk/interactive-map): Dados referentes ao nível de Ozono registado em Inglaterra
 
 #### Tratamento dos dados
-Para ver em mais detalhe o tratamento e construção dos datasets ver os notebooks:
-
-* [data_covid](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model/data_covid.ipynb)
-
-* [overdoses](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model/overdoses.ipynb)
+Todo o tratamento de dados aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura, no ficheiro Jupyter Notebook [process_data](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/process_data.ipynb), apesar de tamber se encontrarem em ficheiro Python [Process_Data]
 
 #### Dados
-* Uma explicação do conteúdo em [data_covid.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Monthly_Model/data_covid.csv).
+#### [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Daily_datasets/daily_diabetes.csv)
+Nome da coluna|Significado|Valores possíveis
+--------------|-----------|-----------------
+`Date`|Registo diário | AAAA-MM--DD
+`All_Causes`|Número de óbitos por todas as causas|Inteiro >=0
+`Diabetes`|Número de óbitos por diabetes| Inteiro >= 0
+`Ozone`|Registo médio do nível de Ozono em Inglaterra| Float >=0
+`Temperature`|temperatura média em Inglaterra| Float
 
-Nome da coluna | Significado | Possíveis valores
------------- | ------------- | -------------
-`Date` | Data do último dia do mês em questão | YYYY-MM-DD
-`confirmados_arsnorte` | Novos Casos confirmados na ARS Norte      | Inteiro >= 0 |
-`confirmados_arscentro` | Novos Casos confirmados na ARS Centro      | Inteiro >= 0 |
-`confirmados_arslvt` | Novos Casos confirmados na ARS Lisboa e Vale do Tejo      | Inteiro >= 0 |
-`confirmados_arsalentejo` | Novos Casos confirmados na ARS Alentejo     | Inteiro >= 0 |
-`confirmados_arsalgarve` | Novos Casos confirmados na ARS Algarve    | Inteiro >= 0 |
-`confirmados_acores` | Novos Casos confirmados na Região Autónoma dos Açores | Inteiro >= 0 |
-`confirmados_madeira` | Novos Casos confirmados na Região Autónoma da Madeira  |  Inteiro >= 0 |
-`confirmados_novos` | Número de novos casos confirmados comparativamente ao dia anterior | Inteiro >= 0 |
-`recuperados` | Novos casos recuperados | Inteiro >= 0 
-`obitos` | Número de óbitos | Inteiro >= 0
-`internados` | Número de pacientes COVID-19 internados | Inteiro (caso o número seja negativo significa que o número de internados diminuiu relativamente ao mês anterior)
-`internados_uci` | Número de pacientes COVID-19 internados em Unidades de Cuidados Intensivos | Inteiro (caso o número seja negativo significa que o número de internados em Unidades de Cuidados Intensivos diminuiu relativamente ao mês anterior)
-`confirmados_0_9_f` | Número de novos casos confirmados do sexo feminino na faixa etária 0-9 anos | Inteiro >= 0
-`confirmados_0_9_m` | Número de novos casos confirmados do sexo masculino na faixa etária 0-9 anos | Inteiro >= 0 
-`confirmados_10_19_f` | Número de novos casos confirmados do sexo feminino na faixa etária 10-19 anos | Inteiro >= 0 
-`confirmados_10_19_m` | Número de novos casos confirmados do sexo masculino na faixa etária 10-19 anos | Inteiro >= 0 
-`confirmados_20_29_f` | Número de novos casos confirmados do sexo feminino na faixa etária 20-29 anos | Inteiro >= 0 
-`confirmados_20_29_m` | Número de novos casos confirmados do sexo masculino na faixa etária 20-29 anos | Inteiro >= 0 
-`confirmados_30_39_f` | Número de novos casos confirmados do sexo feminino na faixa etária 30-39 anos | Inteiro >= 0 
-`confirmados_30_39_m` | Número de novos casos confirmados do sexo masculino na faixa etária 30-39 anos | Inteiro >= 0 
-`confirmados_40_49_f` | Número de novos casos confirmados do sexo feminino na faixa etária 40-49 anos | Inteiro >= 0 
-`confirmados_40_49_m` | Número de novos casos confirmados do sexo masculino na faixa etária 40-49 anos | Inteiro >= 0 
-`confirmados_50_59_f` | Número de novos casos confirmados do sexo feminino na faixa etária 50-59 anos | Inteiro >= 0 
-`confirmados_50_59_m` | Número de novos casos confirmados do sexo masculino na faixa etária 50-59 anos | Inteiro >= 0 
-`confirmados_60_69_f` | Número de novos casos confirmados do sexo feminino na faixa etária 60-69 anos | Inteiro >= 0 
-`confirmados_60_69_m` | Número de novos casos confirmados do sexo masculino na faixa etária 60-69 anos | Inteiro >= 0 
-`confirmados_70_79_f` | Número de novos casos confirmados do sexo feminino na faixa etária 70-79 anos | Inteiro >= 0 
-`confirmados_70_79_m` | Número de novos casos confirmados do sexo masculino na faixa etária 70-79 anos | Inteiro >= 0 
-`confirmados_80_plus_f` | Número de novos casos confirmados do sexo feminino na faixa etária 80+ anos | Inteiro >= 0 
-`confirmados_80_plus_m` | Número de novos casos confirmados do sexo masculino na faixa etária 80+ anos | Inteiro >= 0 
-`obitos_arsnorte` | Novos Óbitos na ARS Norte      | Inteiro >= 0 
-`obitos_arscentro` | Novos Óbitos na ARS Centro      | Inteiro >= 0 
-`obitos_arslvt` | Novos Óbitos na ARS Lisboa e Vale do Tejo      | Inteiro >= 0 
-`obitos_arsalentejo` | Novos Óbitos na ARS Alentejo     | Inteiro >= 0 
-`obitos_arsalgarve` | Novos Óbitos na ARS Algarve    | Inteiro >= 0 
-`obitos_acores` | Novos Óbitos na Região Autónoma dos Açores | Inteiro >= 0 
-`obitos_madeira` | Novos Óbitos na Região Autónoma da Madeira  |  Inteiro >= 0 
-`obitos_0_9_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 0-9 anos | Inteiro >= 0
-`obitos_0_9_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 0-9 anos | Inteiro >= 0
-`obitos_10_19_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 10-19 anos | Inteiro >= 0 
-`obitos_10_19_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 10-19 anos | Inteiro >= 0 
-`obitos_20_29_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 20-29 anos | Inteiro >= 0 
-`obitos_20_29_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 20-29 anos | Inteiro >= 0 
-`obitos_30_39_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 30-39 anos | Inteiro >= 0 
-`obitos_30_39_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 30-39 anos | Inteiro >= 0 
-`obitos_40_49_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 40-49 anos | Inteiro >= 0 
-`obitos_40_49_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 40-49 anos | Inteiro >= 0
-`obitos_50_59_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 50-59 anos | Inteiro >= 0 
-`obitos_50_59_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 50-59 anos | Inteiro >= 0 
-`obitos_60_69_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 60-69 anos | Inteiro >= 0 
-`obitos_60_69_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 60-69 anos | Inteiro >= 0 
-`obitos_70_79_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 70-79 anos | Inteiro >= 0 
-`obitos_70_79_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 70-79 anos | Inteiro >= 0 
-`obitos_80_plus_f` | Número de novos óbitos de pacientes do sexo feminino na faixa etária 80+ anos | Inteiro >= 0 
-`obitos_80_plus_m` | Número de novos óbitos de pacientes do sexo masculino na faixa etária 80+ anos | Inteiro >= 0 
-`ativos` | Número de novos casos ativos | Inteiro (caso o número seja negativo significa que o número de casos ativos diminuiu relativamente ao mês anterior)
-`internados_enfermaria` | Número de pacientes COVID-19 internados em Enfermaria (não Unidades de Cuidados Intensivos) | Inteiro (caso o número seja negativo significa que o número de internados na enfermaria diminuiu relativamente ao mês anterior)
-`Max_Temp` | Média de temperaturas máxima registadas | Float
-`Min_Temp` | Média de temperaturas mínima registada | Float
-`Precipitation` | Média de precipitação registada | Float
-`Wind_Speed` | Média da velocidade do vento registada | Float
-`Wind_Direction` | Média da direção do vento registada | Float
-`Visibility` | Média da visibilidade registada | Float
-`Cloud_Cover` | Média da nebulosidade registada | Float
-`Relative_Humidity` | Média da humidade registada | Float
-`Rain` | Registo de chuva | Float
-`Clear` | Registo de céu limpo | Float
-`Partially_cloudy` | Registado de céu nublado | Float
+### Datasets semanários 
+#### Origem dos dados 
+#### Tratamento dos dados
+#### Dados
 
-* Uma explicação do conteúdo em [overdoses.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model/overdoses.csv).
+### Datasets mensais
+#### Origem dos dados 
+
+* [Dados de overdoses nos Estados Unidos da América](https://catalog.data.gov/dataset/vsrr-provisional-drug-overdose-death-counts) 
+* * [Dados climatéricos obtidos para Estados Unidos da América](https://www.visualcrossing.com/weather/weather-data-services#/login)
+#### Tratamento dos dados
+Para ver em mais detalhe o tratamento e construção dos datasets ver o notebooks:
+
+* [overdoses](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Montlhy_datasets/overdoses.ipynb)
+#### Dados
+* Uma explicação do conteúdo em [overdoses.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Montlhy_datasets/overdoses.csv).
 
 Nome da coluna | Significado | Possíveis valores
 ------------ | ------------- | -------------
@@ -366,3 +252,5 @@ Nome da coluna | Significado | Possíveis valores
 `Opioids (T40.0-T40.4,T40.6)` | Número total de mortes por overdose por opióides | Inteiro >= 0
 `Psychostimulants with abuse potential (T43.6)` | Número de mortes por overdose de psicoestimulantes com potencial de abuso | Inteiro >= 0
 `Synthetic opioids, excl. methadone (T40.4)` | Número de mortes por overdose de opióides sintéticos, não incluíndo Metadona | Inteiro >= 0
+
+
