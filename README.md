@@ -60,7 +60,7 @@ Toda a exploração realizada sobre os dados e seu consequente tratamento aplica
 
 #### Dataset final obtido : [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/)
 
-Nesta secção é apresentada a descrição dos dados presentes em covid_final.csv. Todas as features presentes neste dataset foram selecionadas recorrendo a técnicas de **feature selection** que se encontram em [feature_selection.ipymb](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/feature_selection.ipymb). Previamente à escolha destes atributos, os dados sofreram reparações por forma a tratar todos os missing values e/ou timesteps em falta. A variável objetivo é a variável **obito**.
+Nesta secção é apresentada a descrição dos dados presentes em covid_final.csv. Todas as features presentes neste dataset foram selecionadas recorrendo a técnicas de **feature selection** que se encontram em [feature_selection.ipymb](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/feature_selection.ipymb). Previamente à escolha destes atributos, os dados sofreram reparações por forma a tratar todos os missing values e/ou timesteps em falta. **A variável objetivo é a variável obito**.
 
 Nome da coluna|Significado|Valores possíveis
 --------------|-----------|-----------------
