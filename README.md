@@ -193,7 +193,7 @@ Para além dos datasets acima referidos e documentados, foram criados ainda outr
 * [Department for Environment Food & Rural Affairs - UK AIR](https://uk-air.defra.gov.uk/interactive-map): Dados referentes ao nível de Ozono registado em Inglaterra
 
 #### Tratamento dos dados
-Todo o tratamento de dados aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura, no ficheiro Jupyter Notebook [process_data](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/process_data.ipynb), apesar de tamber se encontrarem em ficheiro Python [Process_Data]
+Todo o tratamento de dados aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura, no ficheiro Jupyter Notebook [process_data](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/tratamento_data), apesar de tamber se encontrarem em ficheiro Python [Process_Data]
 
 #### Dados
 #### [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Daily_datasets/daily_diabetes.csv)
@@ -205,10 +205,6 @@ Nome da coluna|Significado|Valores possíveis
 `Ozone`|Registo médio do nível de Ozono em Inglaterra| Float >=0
 `Temperature`|temperatura média em Inglaterra| Float
 
-### Datasets semanários 
-#### Origem dos dados 
-#### Tratamento dos dados
-#### Dados
 
 ### Datasets mensais
 #### Origem dos dados 
@@ -216,9 +212,7 @@ Nome da coluna|Significado|Valores possíveis
 * [Dados de overdoses nos Estados Unidos da América](https://catalog.data.gov/dataset/vsrr-provisional-drug-overdose-death-counts) 
 * [Dados climatéricos obtidos para Estados Unidos da América](https://www.visualcrossing.com/weather/weather-data-services#/login)
 #### Tratamento dos dados
-Para ver em mais detalhe o tratamento e construção dos datasets ver o notebooks:
-
-* [overdoses](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Montlhy_datasets/overdoses.ipynb)
+Para ver em mais detalhe o tratamento e construção dos datasets ver o notebook [overdoses](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Montlhy_datasets/overdoses.ipynb)
 #### Dados
 * Uma explicação do conteúdo em [overdoses.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Montlhy_datasets/overdoses.csv).
 
