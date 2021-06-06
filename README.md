@@ -47,10 +47,13 @@ os nossos modelos de previsão para Séries Temporais. O dataset criado contem r
 
 
 * [DSSG - Data Science for Social Good Portugal](https://github.com/dssg-pt/covid19pt-data/blob/master/data.csv) : Dados referentes ao COVID-19 em Portugal a partir de 26-02-2020;
-* [Visualcrossing](https://www.visualcrossing.com) : Dados atmosféricos em Portugal a partir de 01-01-2020;
+* [Visualcrossing](https://www.visualcrossing.com) : Dados atmosféricos em Portugal e Estados Unidos da América;
 * [COVID-19 World Vaccination Progress](https://www.kaggle.com/gpreda/covid-world-vaccination-progress) : Total diário de vacinação do COVID-19 no mundo;
 * [SNS - Serviço Nacional de Saúde Portugal](https://transparencia.sns.gov.pt/explore/dataset/acionamentos-de-meios-de-emergencia-medica/table/?sort=periodo&fbclid=IwAR1Q59_J2oyrap0gqnxUrqC2dKeSKev8seWiNqMPjsisxL4a_bgUMwKAgfE&refine.periodo=2021) : Evolução diária dos acionamentos de meios de emergência Médica;
 * [Coronavirus Source Data from OurWorldInData.](https://ourworldindata.org/coronavirus-source-data) : Dados relativos ao COVID-19, provenientes de vários países do mundo.
+* [Dados Covid e outras doenças respiratórias para os Estados Unidos](https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Week-Ending-D/r8kw-7aab) 
+* [Dados de transporte/circulação nos Estados Unidos](https://www.bts.gov/covid-19/week-in-transportation)
+* [Dados de voos mundiais](https://www.flightradar24.com/data/statistics)
 
 #### Tratamento e exploração dos dados
 Toda a exploração realizada sobre os dados e seu consequente tratamento aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura em ficheiros Jupyter Notebook na pasta [Tratamento_Exploracao](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao).
