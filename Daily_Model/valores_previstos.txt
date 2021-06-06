@@ -1,0 +1,2 @@
+Previsão do número de mortes do melhor modelo CNN: 23 mortes
+Previsão do número de mortes do melhor modelo LST: 24 mortes
