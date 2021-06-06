@@ -151,10 +151,9 @@ Para o dataset semanal, o seu registo de semana corresponde à data do primeiro 
 Nome da coluna | Significado | Possíveis valores
 ------------ | ------------- | -------------
 `Start Date` | Data do primeiro dia da semana em questão | YYYY-MM-DD
-`Pneumonia Deaths` | Número de mortes por Pneumonia | Inteiro >= 0 
-`Pneumonia and COVID-19 Deaths` | Número de mortes por Pneumonia e COVID-19 | Inteiro >= 0
-`Influenza Deaths` | Número de mortes por Influenza | Inteiro >= 0  
-`Pneumonia, Influenza, or COVID-19 Deaths` | Número de mortes por Pneumonia, COVID-19 e Influenza | Inteiro >= 0
+`Pneumonia Deaths` | Número de mortes por Pneumonia nos Estados Unidos da América | Inteiro >= 0 
+`Pneumonia and COVID-19` | Número de mortes por COVID-19 nos Estados Unidos da América | Inteiro >= 0
+`Influenza Deaths` | Número de mortes por Influenza nos Estados Unidos da América | Inteiro >= 0  
 `flights` | Número médio de voos ocorridos em todo mundo | Float >= 0 
 `commercial_flights` | Número médio de voos comerciais ocorridos em todo mundo | Float >= 0
 `People Screened at Airports` | Número de pessoas examinadas nos aeroportos nos Estados Unidos | Inteiro >= 0  
