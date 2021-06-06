@@ -168,11 +168,11 @@ Neste projeto para a previsão do número de óbitos diários, semanais e mensai
 
 * Recurrent Neural Network LSTM
 
- ![Tux, the Linux mascot](/assets/images/lstm.png)
+ ![Tux, the Linux mascot](lstm_model.png)
 
 * Convolutional neural Network
 
- ![Tux, the Linux mascot](/assets/images/lstm.png)
+ ![Tux, the Linux mascot](cnn_model.png)
 
 Todos os modelos testados, em conjunto com as suas otimizações experimentadas e resultados obtidos, encontram-se divididos em 3 pastas de ficheiros [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model), [Weekly_model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model) e [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model).
 
