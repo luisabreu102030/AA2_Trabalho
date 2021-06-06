@@ -83,7 +83,7 @@ Date|Registo diário | AAAA-MM--DD
 `new_deaths_per_million_Czechia`| Número de mortes por Covid por milhão de pessoas na República Checa | Float >= 0
 `hosp_patients_per_million_Czechia`|Número de pacientes hospitalizados por milhão de pessoas na República Checa | Float >= 0 
 `new_cases_per_million_Denmark`|Número de novos casos por milhão de pessoas na Dinamarca | Float >= 0
-`new_tests_per_thousand_Estonia`|Número de novos casos por milhão de pessoas na Estónia | Float >= 0 
+`new_tests_per_thousand_Estonia`|Número de novos testes por mil de pessoas na Estónia | Float >= 0 
 `icu_patients_per_million_France`|Número de pacientes em unidades de cuidados intensivos por milhão de pessoas na França | Float >= 0
 `new_cases_per_million_Georgia`|Número de novos casos por  milhão de pessoas na Geórgia | Float >= 0
 `new_cases_per_million_Germany`|Número de novos casos por  milhão de pessoas na Alemanha | Float >= 0
@@ -96,20 +96,20 @@ Date|Registo diário | AAAA-MM--DD
 `new_deaths_per_million_Ireland`|Número de mortes por Covid por  milhão de pessoas na Irlanda | Float >= 0
 `icu_patients_per_million_Ireland`|Número de pacientes em unidades de cuidados intensivos por milhão de pessoas na Irlanda | Float >= 0
 `hosp_patients_per_million_Ireland`|Número de pacientes hospitalizados por milhão de pessoas na Irlanda | Float >= 0 
-`new_tests_per_thousand_Ireland`|Número de novos casos por  milhão de pessoas na Iralanda | Float >= 0
+`new_tests_per_thousand_Ireland`|Número de novos testes por mil de pessoas na Iralanda | Float >= 0
 `positive_rate_Ireland`|Taxa de testes positivos à COVID-19 na Irlanda | Float >= 0 
-`new_tests_per_thousand_Italy`|Número de novos casos por  milhão de pessoas na Itália | Float >= 0
+`new_tests_per_thousand_Italy`|Número de novos testes por mil de pessoas na Itália | Float >= 0
 `new_cases_per_million_Japan`|Número de novos casos por  milhão de pessoas no Japão | Float >= 0
 `new_deaths_per_million_Japan`|Número de mortes por Covid por  milhão de pessoas no Japão | Float >= 0
 `new_cases_per_million_Latvia`|Número de novos casos por  milhão de pessoas na Letônia | Float >= 0
 `new_deaths_per_million_Latvia`|Número de mortes por Covid por  milhão de pessoas na Letônia |Float >= 0
 `hosp_patients_per_million_Latvia`|Número de pacientes hospitalizados por milhão de pessoas na Letônia | Float >= 0 
-`new_tests_per_thousand_Latvia`|Número de novos casos por  milhão de pessoas na Letônia | Float >= 0
-`new_cases_per_million_Lithuania`|Número de novos casos por  milhão de pessoas na Lituânia | Float >= 0
-`new_tests_per_thousand_Lithuania`|Número de novos casos por  milhão de pessoas na Lituânia |Float >= 0
+`new_tests_per_thousand_Latvia`|Número de novos testes por mil de pessoas na Letônia | Float >= 0
+`new_cases_per_million_Lithuania`|Número de novos casos por milhão de pessoas na Lituânia | Float >= 0
+`new_tests_per_thousand_Lithuania`|Número de novos testes por mil de pessoas na Lituânia |Float >= 0
 `icu_patients_per_million_Luxembourg`|Número de pacientes em unidades de cuidados intensivos por milhão de pessoas no Luxemburgo | Float >= 0
 `new_deaths_per_million_Malta`|Número de mortes por Covid por  milhão de pessoas em Malta | Float >= 0
-`new_tests_per_thousand_Malta`|Número de novos casos por milhão de pessoas em Malta | Float >= 0
+`new_tests_per_thousand_Malta`|Número de novos testes por mil de pessoas em Malta | Float >= 0
 `positive_rate_Malta`|Taxa de testes positivos à COVID-19 em Malta |Float >= 0
 `new_cases_per_million_Monaco`|Número de novos casos por  milhão de pessoas no Mónaco | Float >= 0
 `new_cases_per_million_Montenegro`|Número de novos casos por  milhão de pessoas em Montenegro | Float >= 0
@@ -121,11 +121,11 @@ Date|Registo diário | AAAA-MM--DD
 `new_deaths_per_million_Serbia`|Número de mortes por Covid por milhão de pessoas na Sérvia | Float >= 0
 `positive_rate_Serbia`|Taxa de testes positivos à COVID-19 na Sérvia | Float >= 0 
 `new_cases_per_million_Slovakia`|Número de novos casos por milhão de pessoas na Eslováquia | Float >= 0
-`new_tests_per_thousand_Slovakia`|Número de novos casos por milhão de pessoas na Eslováquia | Float >= 0
+`new_tests_per_thousand_Slovakia`|Número de novos testes por mil de pessoas na Eslováquia | Float >= 0
 `new_cases_per_million_Slovenia`|Número de novos casos por milhão de pessoas na Eslovénia | Float >= 0
 `new_deaths_per_million_Slovenia`|Número de mortes por Covid por milhão de pessoas na Eslovénia | Float >= 0
 `icu_patients_per_million_Slovenia`|Número de pacientes em unidades de cuidados intensivos por milhão de pessoas na Eslovénia | Float >= 0
-`new_tests_per_thousand_Slovenia`|Número de novos casos por milhão de pessoas na Eslovénia |Float >= 0 
+`new_tests_per_thousand_Slovenia`|Número de novos testes por mil pessoas na Eslovénia |Float >= 0 
 `new_deaths_per_million_Switzerland`|Número de mortes por Covid por milhão de pessoas na |Float >= 0
 `new_cases_per_million_Turkey`|Número de novos casos por milhão de pessoas na Turquia |Float >= 0 
 `positive_rate_Ukraine`|Taxa de testes positivos à COVID-19 na Ucránia | Float >= 0
@@ -140,8 +140,24 @@ Date|Registo diário | AAAA-MM--DD
 `new_deaths_per_million_United States`|Número de mortos por milhão de pessoas nos Estados Unidos da América |Float >= 0
 `obitos`|Número de mortos por COVID-19 em Portugal |Inteiro >= 0
  
-**Nota :** Esta descrição de dataset é referente a um registo de dados com frequencia diária, no entanto para ser utilizado como dataset de frequencia de registo semanal e mensal algumas alterações foram necessárias realizar.
+**Nota 1 :** Esta descrição de dataset é referente a um registo de dados com frequencia diária, no entanto para ser utilizado como dataset de frequencia de registo semanal e mensal algumas alterações foram necessárias realizar.
 Para o dataset semanal, o seu registo de semana corresponde à data do primeiro dia da semana, no entanto o valor registado para essa semana é o somatório dos dias dessa semana. Semelhante alteração foi feita para obtermos um dataset com registos mensais, mas aqui a data de registo é referente ao último dia do mês e o seu valor é o somatório do valor do primeiro dia do mês até ao último dia do mês.
+
+**Nota 2 :** No dataset que foi adaptado para registos semanais foram acrescentados as seguintes variáveis independentes:
+
+Nome da coluna | Significado | Possíveis valores
+------------ | ------------- | -------------
+`Start Date` | Data do primeiro dia da semana em questão | YYYY-MM-DD
+`Pneumonia Deaths` | Número de mortes por Pneumonia | Inteiro >= 0 
+`Pneumonia and COVID-19 Deaths` | Número de mortes por Pneumonia e COVID-19 | Inteiro >= 0
+`Influenza Deaths` | Número de mortes por Influenza | Inteiro >= 0  
+`Pneumonia, Influenza, or COVID-19 Deaths` | Número de mortes por Pneumonia, COVID-19 e Influenza | Inteiro >= 0
+`flights` | Número médio de voos ocorridos em todo mundo | Float >= 0 
+`commercial_flights` | Número médio de voos comerciais ocorridos em todo mundo | Float >= 0
+`People Screened at Airports` | Número de pessoas examinadas nos aeroportos nos Estados Unidos | Inteiro >= 0  
+`US International Commercial Flights` | Número de voos comerciais internacionais ocorridos nos Estados Unidos | Inteiro >= 0  
+`Nr People not staying home` |  Número médio de pessoas que não ficam em casa nos Estados Unidos | Float >= 0  
+`Nr of trips` | Número médio de viagens feitas nos Estados Unidos | Float >= 0  
 
 
 ## Modelos deep learning
@@ -162,75 +178,6 @@ Todos os modelos testados, em conjunto com as suas otimizações experimentadas 
 
 No ficheiro [relatorio.pdf](https://github.com/luisabreu102030/AA2_Trabalho) é possível encontrar a discussão dos resultados obtidos.
 
-#Hugo decide se quer manter ou apagar ou adicionar ao diario
-### Datasets semanais AAAAAAAAAAAAAAAAAAAAAAAAAAAAA????????????????????????????????????
-* Todos os datasets usados na construção dos datasets obtidos encontram-se em [Datasets](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model/Datasets)
-#### Origem dos dados  
-* [Dados de covid para Portugal](https://github.com/dssg-pt/covid19pt-data)
-
-* [Dados R(t) para Portugal](http://www.insa.min-saude.pt/category/areas-de-atuacao/epidemiologia/covid-19-curva-epidemica-e-parametros-de-transmissibilidade/)
-
-* [Dados Covid e outras doenças respiratórias para os Estados Unidos](https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Week-Ending-D/r8kw-7aab) 
-
-* [Dados climatéricos obtidos para Portugal e Estados Unidos](https://www.visualcrossing.com/weather/weather-data-services#/login)
-
-* [Dados de transporte/circulação nos Estados Unidos](https://www.bts.gov/covid-19/week-in-transportation)
-
-* [Dados de voos mundiais](https://www.flightradar24.com/data/statistics)
-
-#### Tratamento dos dados
-Para ver em mais detalhe o tratamento e construção dos datasets ver os notebooks:
-
-* [covid_portugal](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/covid_portugal.ipynb)
-
-* [usa_dataset](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/usa_dataset.ipynb)
-
-#### Dados
-* Uma explicação do conteúdo em [covid_portugal.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/covid_portugal.csv).
-
-Nome da coluna | Significado | Possíveis valores
------------- | ------------- | -------------
-`data` | Data do primeiro dia da semana em questão | YYYY-MM-DD
-
-`internados_enfermaria` | Número de pacientes COVID-19 internados em Enfermaria (não Unidades de Cuidados Intensivos) | Inteiro (caso o número seja negativo significa que o número de internados na enfermaria diminui relativamente à semana passada)
-`Rt_número_de_reprodução` | R(t) nacional | Float >= 0
-
-`flights`	| Número médio de voos ocorridos em todo mundo | Float >= 0
-`commercial_flights` | Número médio de voos comerciais ocorridos em todo mundo | Float >= 0
-
-* Uma explicação do conteúdo em [usa_dataset.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/usa_dataset.csv).
-
-Nome da coluna | Significado | Possíveis valores
------------- | ------------- | -------------
-`Start Date` | Data do primeiro dia da semana em questão | YYYY-MM-DD
-`COVID-19 Deaths` | Número de mortes por COVID-19 | Inteiro >= 0
-`Total Deaths` | Número Total de mortes | Inteiro >= 0
-`Percent of Expected Deaths` | 
-`Pneumonia Deaths` | Número de mortes por Pneumonia | Inteiro >= 0
-`Pneumonia and COVID-19 Deaths` | Número de mortes por Pneumonia e COVID-19 | Inteiro >= 0
-`Influenza Deaths` | Número de mortes por Influenza | Inteiro >= 0
-`Pneumonia, Influenza, or COVID-19 Deaths` | Número de mortes por Pneumonia, COVID-19 e Influenza | Inteiro >= 0
-`flights` | Número médio de voos ocorridos em todo mundo | Float >= 0
-`commercial_flights` | Número médio de voos comerciais ocorridos em todo mundo | Float >= 0
-`People Screened at Airports` | Número de pessoas examinadas nos aeroportos nos Estados Unidos | Inteiro >= 0
-`US International Commercial Flights` | Número de voos comerciais internacionais ocorridos nos Estados Unidos | Inteiro >= 0
-`Nr People staying home` | Número médio de pessoas que ficam em casa nos Estados Unidos | Float >= 0
-`Nr People not staying home` |  Número médio de pessoas que não ficam em casa nos Estados Unidos | Float >= 0
-`Nr of trips` | Número médio de viagens feitas nos Estados Unidos | Float >= 0
-`Max_Temp` | Média de temperaturas máxima registadas | Float
-`Min_Temp` | Média de temperaturas mínima registada | Float
-`Temperature` | Média de temperatura registada | Float
-`Precipitation` | Média de precipitação registada | Float
-`Wind_Speed` | Média da velocidade do vento registada | Float
-`Wind_Direction` | Média da direção do vento registada | Float
-`Visibility` | Média da visibilidade registada | Float
-`Cloud_Cover` | Média da nebulosidade registada | Float
-`Relative_Humidity` | Média da humidade registada | Float
-`Rain` | Registo de chuva | Float
-`Clear` | Registo de céu limpo | Float
-`Partially_cloudy` | Registado de céu nublado | Float
-
-*****SADJZKÇVN BZDKLFJBVN DFKJVBNOFNBBAEOÇFBN BAÇJRBN EOAI N''?????????????????????????????*****
 
 # NOTA: [Datasets ignorados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_ignorados)
 Para além dos datasets acima referidos e documentados, foram criados ainda outros datasets que não foram utilizados no projeto devido à falta de dados que solidificacem o interesse nos mesmo. Como tal deixamos neste repositório esses mesmo datasets, com a esperança de poderem ajudar algum researcher.
