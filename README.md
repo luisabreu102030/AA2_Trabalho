@@ -179,7 +179,7 @@ Todos os modelos testados, em conjunto com as suas otimizações experimentadas 
 
 ## Relatório
 
-No ficheiro [relatorio.pdf](https://github.com/luisabreu102030/AA2_Trabalho) é possível encontrar a discussão dos resultados obtidos.
+No ficheiro [relatorio.pdf](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/relatorio.pdf) é possível encontrar a discussão dos resultados obtidos entre outras considerações sobre o projeto.
 
 
 # NOTA: [Datasets ignorados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_ignorados)
