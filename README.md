@@ -214,7 +214,7 @@ Nome da coluna|Significado|Valores possíveis
 #### Tratamento dos dados
 Para ver em mais detalhe o tratamento e construção dos datasets ver o notebook [overdoses](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Montlhy_datasets/overdoses.ipynb)
 #### Dados
-* Uma explicação do conteúdo em [overdoses.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Montlhy_datasets/overdoses.csv).
+* Uma explicação sobre o conteúdo de [overdoses.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Montlhy_datasets/overdoses.csv).
 
 Nome da coluna | Significado | Possíveis valores
 ------------ | ------------- | -------------
