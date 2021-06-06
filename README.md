@@ -25,7 +25,7 @@ O repositório está dividido em 6 pastas:
 
 * [Datasets_utilizados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_utilizados) : Onde é possível encontrar os datasets que compõem o dataset final que será utilizado na previsão do número de óbitos em Portugal;
 * [Datasets_ignorados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_ignorados) : Encontram-se os datasets pesquisados, e datasets já formados para outras doenças, no entanto que devido à falta de mais features foram por nós ignorados.
-* [Tratamento_exploração](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao) : Encontra-se todo o processo de exploração de dados, bem como todo o seu tratamento no que diz respeito a missing values e à sua tranformação para datasets com registos de frequência diária, semanal e mensal.
+* [Tratamento_exploração](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao) : Encontra-se todo o processo de exploração de dados, bem como todo o seu tratamento no que diz respeito a missing values e à sua tranformação para datasets com registos de frequência diária, semanal e mensal. Esta pasta encontra-se dividida em duas pastas, uma contém o tratamento dos dados outra a sua exploração bem como a seleção de atributos. 
 * [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model) : Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos em Portugal. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são diários.
 para a concepção do modelo de machine learning capaz de fazer previsão diária de mortes; 
 * [Weekly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model): Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos em Portugal. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são semanais.
@@ -47,75 +47,120 @@ os nossos modelos de previsão para Séries Temporais. O dataset criado contem r
 
 
 * [DSSG - Data Science for Social Good Portugal](https://github.com/dssg-pt/covid19pt-data/blob/master/data.csv) : Dados referentes ao COVID-19 em Portugal a partir de 26-02-2020;
-* [Visualcrossing](https://www.visualcrossing.com) : Dados atmosféricos em Portugal a partir de 01-01-2020;
+* [Visualcrossing](https://www.visualcrossing.com) : Dados atmosféricos em Portugal e Estados Unidos da América;
 * [COVID-19 World Vaccination Progress](https://www.kaggle.com/gpreda/covid-world-vaccination-progress) : Total diário de vacinação do COVID-19 no mundo;
 * [SNS - Serviço Nacional de Saúde Portugal](https://transparencia.sns.gov.pt/explore/dataset/acionamentos-de-meios-de-emergencia-medica/table/?sort=periodo&fbclid=IwAR1Q59_J2oyrap0gqnxUrqC2dKeSKev8seWiNqMPjsisxL4a_bgUMwKAgfE&refine.periodo=2021) : Evolução diária dos acionamentos de meios de emergência Médica;
-* [Coronavirus Source Data from OurWorldInData.](https://ourworldindata.org/coronavirus-source-data) : Dados relativos ao COVID-19, provenientes de vários países do mundo.
+* [Coronavirus Source Data from OurWorldInData.](https://ourworldindata.org/coronavirus-source-data) : Dados relativos ao COVID-19, provenientes de vários países do mundo;
+* [Dados Covid e outras doenças respiratórias para os Estados Unidos](https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Week-Ending-D/r8kw-7aab) : Dados relativos ao COVID-19 e outras doenças respiratórias nos Estados unidos da América;
+* [Dados de transporte/circulação nos Estados Unidos](https://www.bts.gov/covid-19/week-in-transportation) : Dados referentes á circulação de pessoas e transportes nos Estados unidos da América;
+* [Dados de voos mundiais](https://www.flightradar24.com/data/statistics) : Dados de vôos realizados nos Estados unidos da América.
 
 #### Tratamento e exploração dos dados
 Toda a exploração realizada sobre os dados e seu consequente tratamento aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura em ficheiros Jupyter Notebook na pasta [Tratamento_Exploracao](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao).
 
 #### Dataset final obtido : [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/)
 
-Nesta secção é apresentada a descrição dos dados presentes em covid_final.csv. Todas as features presentes neste dataset foram selecionadas recorrendo a técnicas de **feature selection** que se encontram em [feature_selection.ipymb](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/feature_selection.ipymb). Previamente à escolha destes atributos, os dados sofreram reparações por forma a tratar todos os missing values e/ou timesteps em falta.
+Nesta secção é apresentada a descrição dos dados presentes em covid_final.csv. Todas as features presentes neste dataset foram selecionadas recorrendo a técnicas de **feature selection** que se encontram em [feature_selection.ipymb](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/feature_selection.ipymb). Previamente à escolha destes atributos, os dados sofreram reparações por forma a tratar todos os missing values e/ou timesteps em falta. **A variável objetivo é a variável obito**.
 
 Nome da coluna|Significado|Valores possíveis
 --------------|-----------|-----------------
 Date|Registo diário | AAAA-MM--DD
-`confirmados`| Casos confirmados de COVID-19|Inteiro >= 0
-`confirmados_arsnorte`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Norte|Inteiro >= 0
-`confirmados_arscentro`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Centro|Inteiro >= 0
-`confirmados_arslvt`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Lisboa e Vale do Tejo|Inteiro >= 0
-`confirmados_arsalentejo`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Alentejo|Inteiro >= 0
-`confirmados_arsalgarve`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Algarve|Inteiro >= 0
-`confirmados_acores`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Açores|Inteiro >= 0
-`confirmados_madeira`|Casos confirmados de COVID-19 na Autoridade Regional de Saúde Madeira|Inteiro >= 0
-`confirmados_novos`|Novos casos confirmados de COVID-19|Inteiro >= 0
-`recuperados`|Número de pacientes recuperados|Inteiro >= 0
-`obitos`|Número de óbitos|Inteiro >= 0
-`internados_uci`| Número de internados em unidades de Cuidados Intensivos|Inteiro >= 0
-`obitos_arsnorte`|Número de óbitos na Autoridade Regional de Saúde Norte|Inteiro >= 0
-`obitos_arscentro`|Número de óbitos na Autoridade Regional de Saúde Centro|Inteiro >= 0
-`obitos_arslvt`|Número de óbitos na Autoridade Regional de Saúde Lisboa e Vale do tejo|Inteiro >= 0
-`obitos_arsalentejo`|Número de óbitos na Autoridade Regional de Saúde Alentejo|Inteiro >= 0
-`obitos_arsalgarve`|Número de óbitos na Autoridade Regional de Saúde Algarve|Inteiro >= 0
-`obitos_acores`|Número de óbitos na Autoridade Regional de Saúde Açores|Inteiro >= 0
-`obitos_madeira`|Número de óbitos na Autoridade Regional de Saúde Madeira|Inteiro >= 0
-`ativos|Número de casos ativos |Inteiro >= 0
-`internados_enfermaria`|Número de pacientes COVID-19 internados em Enfermaria (não Unidades de Cuidados Intensivos)|Inteiro >= 0
-`confirmados_0_9`|Número total de casos confirmados na faixa etária 0-9 anos|Inteiro >= 0
-`confirmados_10_19`|Número total de casos confirmados na faixa etária 10-19 anos|Inteiro >= 0
-`confirmados_20_29`|Número total de casos confirmados na faixa etária 20-29 anos|Inteiro >= 0
-`confirmados_30_39`|Número total de casos confirmados na faixa etária 30-39 anos|Inteiro >= 0
-`confirmados_40_49`|Número total de casos confirmados na faixa etária 40-49 anos|Inteiro >= 0
-`confirmados_50_59`|Número total de casos confirmados na faixa etária 50-59 anos|Inteiro >= 0
-`confirmados_60_69`|Número total de casos confirmados na faixa etária 60-69 anos|Inteiro >= 0
-`confirmados_70_79`|Número total de casos confirmados na faixa etária 70-79 anos|Inteiro >= 0
-`confirmados_80_plus`|Número total de casos confirmados na faixa etária 80 anos para cima|Inteiro >= 0
-`obitos_0_9`|Número total de óbitos na faixa etária 0-9 anos|Inteiro >= 0
-`obitos_10_19`|Número total de óbitos na faixa etária 10-19 anos|Inteiro >= 0
-`obitos_20_29`|Número total de óbitos na faixa etária 20-29 anos|Inteiro >= 0
-`obitos_30_39`|Número total de óbitos na faixa etária 30-39 anos|Inteiro >= 0
-`obitos_40_49`|Número total de óbitos na faixa etária 40-49 anos|Inteiro >= 0
-`obitos_50_59`|Número total de óbitos na faixa etária 50-59 anos|Inteiro >= 0
-`obitos_60_69`|Número total de óbitos na faixa etária 60-69 anos|Inteiro >= 0
-`obitos_70_79`|Número total de óbitos na faixa etária 70-79 anos|Inteiro >= 0
-`obitos_80_plus`|Número total de óbitos na faixa etária 80 anos para cima|Inteiro >= 0
-`Max_Temp`|Média de temperaturas máxima registadas| Float
-`Min_Temp`|Média de temperaturas minimas registadas| Float
-`Temperature`|Temperatura média (Max_Temp + Min_Temp)/2 | Float
-`Precipitation`|Média de precipitação registada | Float
-`Wind_Speed`|Média da velocidade do vento registada | Float
-`Wind_Direction`|Média da direção do vento registada | Float
-`Visibility`|Média da direção do vento registada | Float|
-`Cloud_Cover`| Média da nebulosidade registada | Float
-`Relative_Humidity`| Média da humidade registada | Float
-`Rain`|Registo de chuva| 0 ou 1
-`Clear`|Registo de céu limpo | 0 ou 1
-`Partially_cloudy`|Registo de céu parcialmente nublado| 0 ou 1
-
-**Nota :** Esta descrição de dataset é referente a um registo de dados com frequencia diária, no entanto para ser utilizado como dataset de frequencia de registo semanal e mensal algumas alterações foram necessárias realizar.
+`confirmados_novos`| Número de novos casos confirmados em Portugal | Inteiro >= 0
+`recuperados`|Número de novos pacientes recuperados em Portugal | Inteiro >= 0
+`Temperature`|Temperatura média em Portugal | Float
+`Visibility`|Grau de visibilidadae médio em Portugal |Float
+`total_testes`|Total de testes ao COVID-19 realizados em Portugal | Inteiro >= 0
+`testes_pcr`|Númerero de testes PCR realizados em Portugal | Inteiro >= 0
+`testes_antigenio`|Númerero de testes Antigénio realizados em Portugal | Inteiro >= 0
+`new_cases_per_million_Austria`| Número de novos casos por milhão de pessoas na Austria | Float >= 0
+`new_deaths_per_million_Austria`| Número de mortes por Covid por milhão de pessoas na Austria | Float >= 0
+`new_cases_per_million_Belgium`| Número de novos casos por milhão de pessoas na Bélgica | Float >= 0
+`new_deaths_per_million_Belgium`| Número de mortes por Covid por milhão de pessoas na Bélgica | Float >= 0
+`icu_patients_per_million_Belgium`| Número de pacientes em unidades de cuidados intensivos por milhão de pessoas na Bélgica | Float >= 0
+`hosp_patients_per_million_Belgium`| Número de pacientes hospitalizados por milhão de pessoas na Bélgica | Float >= 0
+`new_deaths_per_million_Bulgaria`| Número de mortes por Covid por milhão de pessoas na Bulgária | Float >= 0
+`new_cases_per_million_Canada`| Número de novos casos por milhão de pessoas no Canadá | Float >= 0
+`new_deaths_per_million_Canada`| Número de mortes por Covid por milhão de pessoas no Canadá | Float >= 0 
+`icu_patients_per_million_Canada`| Número de pacientes em unidades de cuidados intensivos por milhão de pessoas no Canadá | Float >= 0
+`new_cases_per_million_Cyprus`| Número de novos casos por milhão de pessoas no Chipre | Float >= 0
+`new_deaths_per_million_Czechia`| Número de mortes por Covid por milhão de pessoas na República Checa | Float >= 0
+`hosp_patients_per_million_Czechia`|Número de pacientes hospitalizados por milhão de pessoas na República Checa | Float >= 0 
+`new_cases_per_million_Denmark`|Número de novos casos por milhão de pessoas na Dinamarca | Float >= 0
+`new_tests_per_thousand_Estonia`|Número de novos testes por mil de pessoas na Estónia | Float >= 0 
+`icu_patients_per_million_France`|Número de pacientes em unidades de cuidados intensivos por milhão de pessoas na França | Float >= 0
+`new_cases_per_million_Georgia`|Número de novos casos por  milhão de pessoas na Geórgia | Float >= 0
+`new_cases_per_million_Germany`|Número de novos casos por  milhão de pessoas na Alemanha | Float >= 0
+`new_deaths_per_million_Germany`|Número de mortes por Covid por  milhão de pessoas na Alemanha | Float >= 0
+`icu_patients_per_million_Germany`|Número de pacientes em unidades de cuidados intensivos por milhão de pessoas na Alemanha | Float >= 0
+`new_deaths_per_million_Hungary`|Número de mortes por Covid por  milhão de pessoas na Hungria | Float >= 0
+`hosp_patients_per_million_Hungary`|Número de pacientes hospitalizados por  milhão de pessoas na Hungria | Float >= 0
+`positive_rate_India`|Taxa de testes positivos à COVID-19 na Índia | Float >= 0 
+`new_cases_per_million_Ireland`|Número de novos casos por  milhão de pessoas na Irlanda | Float >= 0
+`new_deaths_per_million_Ireland`|Número de mortes por Covid por  milhão de pessoas na Irlanda | Float >= 0
+`icu_patients_per_million_Ireland`|Número de pacientes em unidades de cuidados intensivos por milhão de pessoas na Irlanda | Float >= 0
+`hosp_patients_per_million_Ireland`|Número de pacientes hospitalizados por milhão de pessoas na Irlanda | Float >= 0 
+`new_tests_per_thousand_Ireland`|Número de novos testes por mil de pessoas na Iralanda | Float >= 0
+`positive_rate_Ireland`|Taxa de testes positivos à COVID-19 na Irlanda | Float >= 0 
+`new_tests_per_thousand_Italy`|Número de novos testes por mil de pessoas na Itália | Float >= 0
+`new_cases_per_million_Japan`|Número de novos casos por  milhão de pessoas no Japão | Float >= 0
+`new_deaths_per_million_Japan`|Número de mortes por Covid por  milhão de pessoas no Japão | Float >= 0
+`new_cases_per_million_Latvia`|Número de novos casos por  milhão de pessoas na Letônia | Float >= 0
+`new_deaths_per_million_Latvia`|Número de mortes por Covid por  milhão de pessoas na Letônia |Float >= 0
+`hosp_patients_per_million_Latvia`|Número de pacientes hospitalizados por milhão de pessoas na Letônia | Float >= 0 
+`new_tests_per_thousand_Latvia`|Número de novos testes por mil de pessoas na Letônia | Float >= 0
+`new_cases_per_million_Lithuania`|Número de novos casos por milhão de pessoas na Lituânia | Float >= 0
+`new_tests_per_thousand_Lithuania`|Número de novos testes por mil de pessoas na Lituânia |Float >= 0
+`icu_patients_per_million_Luxembourg`|Número de pacientes em unidades de cuidados intensivos por milhão de pessoas no Luxemburgo | Float >= 0
+`new_deaths_per_million_Malta`|Número de mortes por Covid por  milhão de pessoas em Malta | Float >= 0
+`new_tests_per_thousand_Malta`|Número de novos testes por mil de pessoas em Malta | Float >= 0
+`positive_rate_Malta`|Taxa de testes positivos à COVID-19 em Malta |Float >= 0
+`new_cases_per_million_Monaco`|Número de novos casos por  milhão de pessoas no Mónaco | Float >= 0
+`new_cases_per_million_Montenegro`|Número de novos casos por  milhão de pessoas em Montenegro | Float >= 0
+`positive_rate_Mozambique`|Taxa de testes positivos à COVID-19 em Moçambique | Float >= 0 
+`new_deaths_per_million_Poland`|Número de mortes por Covid por  milhão de pessoas na Polónia | Float >= 0
+`positive_rate_Romania`|Taxa de testes positivos à COVID-19 na Roménia | Float >= 0 
+`new_cases_per_million_Russia`|Número de novos casos por  milhão de pessoas na Rússia | Float >= 0
+`new_deaths_per_million_Russia`|Número de mortes por Covid por  milhão de pessoas na Rússia | Float >= 0 
+`new_deaths_per_million_Serbia`|Número de mortes por Covid por milhão de pessoas na Sérvia | Float >= 0
+`positive_rate_Serbia`|Taxa de testes positivos à COVID-19 na Sérvia | Float >= 0 
+`new_cases_per_million_Slovakia`|Número de novos casos por milhão de pessoas na Eslováquia | Float >= 0
+`new_tests_per_thousand_Slovakia`|Número de novos testes por mil de pessoas na Eslováquia | Float >= 0
+`new_cases_per_million_Slovenia`|Número de novos casos por milhão de pessoas na Eslovénia | Float >= 0
+`new_deaths_per_million_Slovenia`|Número de mortes por Covid por milhão de pessoas na Eslovénia | Float >= 0
+`icu_patients_per_million_Slovenia`|Número de pacientes em unidades de cuidados intensivos por milhão de pessoas na Eslovénia | Float >= 0
+`new_tests_per_thousand_Slovenia`|Número de novos testes por mil pessoas na Eslovénia |Float >= 0 
+`new_deaths_per_million_Switzerland`|Número de mortes por Covid por milhão de pessoas na |Float >= 0
+`new_cases_per_million_Turkey`|Número de novos casos por milhão de pessoas na Turquia |Float >= 0 
+`positive_rate_Ukraine`|Taxa de testes positivos à COVID-19 na Ucránia | Float >= 0
+`new_deaths_per_million_United Arab Emirates`|Número de mortes por Covid por milhão de pessoas nos Emirados Árabes Unidos | Float >= 0
+`tests_per_case_United Arab Emirates`|Número de novos casos por milhão de pessoas nos Emirados Árabes Unidos | Float >= 0
+`new_cases_per_million_United Kingdom`|Número de novos casos por milhão de pessoas no Reino Unido | Float >= 0
+`new_deaths_per_million_United Kingdom`|Número de mortes por Covid por milhão de pessoas na Reino Unido | Float >= 0
+`icu_patients_per_million_United Kingdom`|Número de pacientes em unidades de cuidados intensivos por milhão de pessoas na Reino Unido | Float >= 0
+`hosp_patients_per_million_United Kingdom`|Número de pacientes hospitalizados por milhão de pessoas na Reino Unido | Float >= 0
+`positive_rate_United Kingdom`|Taxa de testes positivos à COVID-19 no Reino Unido | Float >= 0
+`new_cases_per_million_United States`|Número de novos casos por milhão de pessoas nos Estados Unidos da América | Float >= 0
+`new_deaths_per_million_United States`|Número de mortos por milhão de pessoas nos Estados Unidos da América |Float >= 0
+`obitos`|Número de mortos por COVID-19 em Portugal |Inteiro >= 0
+ 
+**Nota 1 :** Esta descrição de dataset é referente a um registo de dados com frequencia diária, no entanto para ser utilizado como dataset de frequencia de registo semanal e mensal algumas alterações foram necessárias realizar.
 Para o dataset semanal, o seu registo de semana corresponde à data do primeiro dia da semana, no entanto o valor registado para essa semana é o somatório dos dias dessa semana. Semelhante alteração foi feita para obtermos um dataset com registos mensais, mas aqui a data de registo é referente ao último dia do mês e o seu valor é o somatório do valor do primeiro dia do mês até ao último dia do mês.
+
+**Nota 2 :** No dataset que foi adaptado para registos semanais foram acrescentados as seguintes variáveis independentes:
+
+Nome da coluna | Significado | Possíveis valores
+------------ | ------------- | -------------
+`Start Date` | Data do primeiro dia da semana em questão | YYYY-MM-DD
+`Pneumonia Deaths` | Número de mortes por Pneumonia | Inteiro >= 0 
+`Pneumonia and COVID-19 Deaths` | Número de mortes por Pneumonia e COVID-19 | Inteiro >= 0
+`Influenza Deaths` | Número de mortes por Influenza | Inteiro >= 0  
+`Pneumonia, Influenza, or COVID-19 Deaths` | Número de mortes por Pneumonia, COVID-19 e Influenza | Inteiro >= 0
+`flights` | Número médio de voos ocorridos em todo mundo | Float >= 0 
+`commercial_flights` | Número médio de voos comerciais ocorridos em todo mundo | Float >= 0
+`People Screened at Airports` | Número de pessoas examinadas nos aeroportos nos Estados Unidos | Inteiro >= 0  
+`US International Commercial Flights` | Número de voos comerciais internacionais ocorridos nos Estados Unidos | Inteiro >= 0  
+`Nr People not staying home` |  Número médio de pessoas que não ficam em casa nos Estados Unidos | Float >= 0  
+`Nr of trips` | Número médio de viagens feitas nos Estados Unidos | Float >= 0  
 
 
 ## Modelos deep learning
@@ -136,75 +181,6 @@ Todos os modelos testados, em conjunto com as suas otimizações experimentadas 
 
 No ficheiro [relatorio.pdf](https://github.com/luisabreu102030/AA2_Trabalho) é possível encontrar a discussão dos resultados obtidos.
 
-#Hugo decide se quer manter ou apagar ou adicionar ao diario
-### Datasets semanais AAAAAAAAAAAAAAAAAAAAAAAAAAAAA????????????????????????????????????
-* Todos os datasets usados na construção dos datasets obtidos encontram-se em [Datasets](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model/Datasets)
-#### Origem dos dados  
-* [Dados de covid para Portugal](https://github.com/dssg-pt/covid19pt-data)
-
-* [Dados R(t) para Portugal](http://www.insa.min-saude.pt/category/areas-de-atuacao/epidemiologia/covid-19-curva-epidemica-e-parametros-de-transmissibilidade/)
-
-* [Dados Covid e outras doenças respiratórias para os Estados Unidos](https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Week-Ending-D/r8kw-7aab) 
-
-* [Dados climatéricos obtidos para Portugal e Estados Unidos](https://www.visualcrossing.com/weather/weather-data-services#/login)
-
-* [Dados de transporte/circulação nos Estados Unidos](https://www.bts.gov/covid-19/week-in-transportation)
-
-* [Dados de voos mundiais](https://www.flightradar24.com/data/statistics)
-
-#### Tratamento dos dados
-Para ver em mais detalhe o tratamento e construção dos datasets ver os notebooks:
-
-* [covid_portugal](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/covid_portugal.ipynb)
-
-* [usa_dataset](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/usa_dataset.ipynb)
-
-#### Dados
-* Uma explicação do conteúdo em [covid_portugal.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/covid_portugal.csv).
-
-Nome da coluna | Significado | Possíveis valores
------------- | ------------- | -------------
-`data` | Data do primeiro dia da semana em questão | YYYY-MM-DD
-
-`internados_enfermaria` | Número de pacientes COVID-19 internados em Enfermaria (não Unidades de Cuidados Intensivos) | Inteiro (caso o número seja negativo significa que o número de internados na enfermaria diminui relativamente à semana passada)
-`Rt_número_de_reprodução` | R(t) nacional | Float >= 0
-
-`flights`	| Número médio de voos ocorridos em todo mundo | Float >= 0
-`commercial_flights` | Número médio de voos comerciais ocorridos em todo mundo | Float >= 0
-
-* Uma explicação do conteúdo em [usa_dataset.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Weekly_model/usa_dataset.csv).
-
-Nome da coluna | Significado | Possíveis valores
------------- | ------------- | -------------
-`Start Date` | Data do primeiro dia da semana em questão | YYYY-MM-DD
-`COVID-19 Deaths` | Número de mortes por COVID-19 | Inteiro >= 0
-`Total Deaths` | Número Total de mortes | Inteiro >= 0
-`Percent of Expected Deaths` | 
-`Pneumonia Deaths` | Número de mortes por Pneumonia | Inteiro >= 0
-`Pneumonia and COVID-19 Deaths` | Número de mortes por Pneumonia e COVID-19 | Inteiro >= 0
-`Influenza Deaths` | Número de mortes por Influenza | Inteiro >= 0
-`Pneumonia, Influenza, or COVID-19 Deaths` | Número de mortes por Pneumonia, COVID-19 e Influenza | Inteiro >= 0
-`flights` | Número médio de voos ocorridos em todo mundo | Float >= 0
-`commercial_flights` | Número médio de voos comerciais ocorridos em todo mundo | Float >= 0
-`People Screened at Airports` | Número de pessoas examinadas nos aeroportos nos Estados Unidos | Inteiro >= 0
-`US International Commercial Flights` | Número de voos comerciais internacionais ocorridos nos Estados Unidos | Inteiro >= 0
-`Nr People staying home` | Número médio de pessoas que ficam em casa nos Estados Unidos | Float >= 0
-`Nr People not staying home` |  Número médio de pessoas que não ficam em casa nos Estados Unidos | Float >= 0
-`Nr of trips` | Número médio de viagens feitas nos Estados Unidos | Float >= 0
-`Max_Temp` | Média de temperaturas máxima registadas | Float
-`Min_Temp` | Média de temperaturas mínima registada | Float
-`Temperature` | Média de temperatura registada | Float
-`Precipitation` | Média de precipitação registada | Float
-`Wind_Speed` | Média da velocidade do vento registada | Float
-`Wind_Direction` | Média da direção do vento registada | Float
-`Visibility` | Média da visibilidade registada | Float
-`Cloud_Cover` | Média da nebulosidade registada | Float
-`Relative_Humidity` | Média da humidade registada | Float
-`Rain` | Registo de chuva | Float
-`Clear` | Registo de céu limpo | Float
-`Partially_cloudy` | Registado de céu nublado | Float
-
-*****SADJZKÇVN BZDKLFJBVN DFKJVBNOFNBBAEOÇFBN BAÇJRBN EOAI N''?????????????????????????????*****
 
 # NOTA: [Datasets ignorados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_ignorados)
 Para além dos datasets acima referidos e documentados, foram criados ainda outros datasets que não foram utilizados no projeto devido à falta de dados que solidificacem o interesse nos mesmo. Como tal deixamos neste repositório esses mesmo datasets, com a esperança de poderem ajudar algum researcher.
