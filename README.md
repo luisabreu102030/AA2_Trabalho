@@ -26,10 +26,10 @@ O repositório está dividido em 6 pastas:
 * [Datasets_utilizados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_utilizados) : Onde é possível encontrar os datasets que compõem o dataset final que será utilizado na previsão do número de óbitos em Portugal;
 * [Datasets_ignorados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_ignorados) : Encontram-se os datasets pesquisados, e datasets já formados para outras doenças, no entanto que devido à falta de mais features foram por nós ignorados.
 * [Tratamento_exploração](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao) : Encontra-se todo o processo de exploração de dados, bem como todo o seu tratamento no que diz respeito a missing values e à sua tranformação para datasets com registos de frequência diária, semanal e mensal. Esta pasta encontra-se dividida em duas pastas, uma contém o tratamento dos dados outra a sua exploração bem como a seleção de atributos. 
-* [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model) : Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos em Portugal. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são diários.
+* [Daily_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Daily_Model) : Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos por COVID-19 em Portugal. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são diários.
 para a concepção do modelo de machine learning capaz de fazer previsão diária de mortes; 
-* [Weekly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model): Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos em Portugal. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são semanais.
-* [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model): Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos em Portugal. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são mensais.
+* [Weekly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Weekly_model): Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos por COVID-19 em Portugal e pela pneumonia nos EUA. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são semanais.
+* [Monthly_Model](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Monthly_Model): Encontram-se ficheiros com o código Python criados para criar os modelos machine learning, que posteriormente serão utilizados para prever o número de óbitos por COVID-19 em Portugal. Estes modelos serão criados utilizandos Redes Recurrentes Neuronais LST e Redes Neuronais Convolucionais, e serão treinados utilizando Séries temporais cujos registos são mensais.
 
 ## Dicionário dos dados
 
@@ -58,9 +58,9 @@ os nossos modelos de previsão para Séries Temporais. O dataset criado contem r
 #### Tratamento e exploração dos dados
 Toda a exploração realizada sobre os dados e seu consequente tratamento aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura em ficheiros Jupyter Notebook na pasta [Tratamento_Exploracao](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao).
 
-#### Dataset final obtido : [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/)
+#### Dataset final obtido : [covid_final.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_utilizados/dataset_final.csv)
 
-Nesta secção é apresentada a descrição dos dados presentes em covid_final.csv. Todas as features presentes neste dataset foram selecionadas recorrendo a técnicas de **feature selection** que se encontram em [feature_selection.ipymb](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/feature_selection.ipymb). Previamente à escolha destes atributos, os dados sofreram reparações por forma a tratar todos os missing values e/ou timesteps em falta. **A variável objetivo é a variável obito**.
+Nesta secção é apresentada a descrição dos dados presentes em covid_final.csv. Todas as features presentes neste dataset foram selecionadas recorrendo a técnicas de **feature selection** que se encontram em [feature_selection.ipymb](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/feature_selection.ipynb). Previamente à escolha destes atributos, os dados sofreram reparações por forma a tratar todos os missing values e/ou timesteps em falta. **A variável objetivo é a variável obito**.
 
 Nome da coluna|Significado|Valores possíveis
 --------------|-----------|-----------------
@@ -146,7 +146,7 @@ Date|Registo diário | AAAA-MM--DD
 **Nota 1 :** Esta descrição de dataset é referente a um registo de dados com frequencia diária, no entanto para ser utilizado como dataset de frequencia de registo semanal e mensal algumas alterações foram necessárias realizar.
 Para o dataset semanal, o seu registo de semana corresponde à data do primeiro dia da semana, no entanto o valor registado para essa semana é o somatório dos dias dessa semana. Semelhante alteração foi feita para obtermos um dataset com registos mensais, mas aqui a data de registo é referente ao último dia do mês e o seu valor é o somatório do valor do primeiro dia do mês até ao último dia do mês.
 
-**Nota 2 :** No dataset que foi adaptado para registos semanais foram acrescentados as seguintes variáveis independentes:
+**Nota 2 :** No dataset que foi adaptado para registos semanais foram ainda acrescentadas as seguintes variáveis independentes:
 
 Nome da coluna | Significado | Possíveis valores
 ------------ | ------------- | -------------
@@ -178,7 +178,7 @@ Todos os modelos testados, em conjunto com as suas otimizações experimentadas 
 
 ## Relatório
 
-No ficheiro [relatorio.pdf](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/relatorio.pdf) é possível encontrar a discussão dos resultados obtidos entre outras considerações sobre o projeto.
+No ficheiro [relatorioFinal.pdf](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/relatorioFinal.pdf) é possível encontrar a discussão dos resultados obtidos entre outras considerações sobre o projeto.
 
 
 # NOTA: [Datasets ignorados](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_ignorados)
@@ -186,7 +186,7 @@ Para além dos datasets acima referidos e documentados, foram criados ainda outr
 
 ### Datasets diários 
 #### Origem dos dados 
-##### Dados para a construção do dataset [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Daily_Model/daily_diabetes.csv) 
+##### Dados para a construção do dataset [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_utilizados/datasets_auxiliares) 
 * [Office for national Statistics](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/adhocs/005259dailydeathoccurrencesbyallcausesanddiabetesmellitusicd10e10toe14englandandwales2012to2014) : Dados referentes a óbitos diários em Inglaterra de 01-01-2012 a 31-12-2014
 * [ECA - Euopean Climate Assessmente & Dataset](https://www.ecad.eu/dailydata/customquery.php): Dados referentes ás temperaturas registadas em Inglaterra
 * [Department for Environment Food & Rural Affairs - UK AIR](https://uk-air.defra.gov.uk/interactive-map): Dados referentes ao nível de Ozono registado em Inglaterra
@@ -195,7 +195,7 @@ Para além dos datasets acima referidos e documentados, foram criados ainda outr
 Todo o tratamento de dados aplicado aos datasets reunidos encontram-se, para uma mais fácil leitura, no ficheiro Jupyter Notebook [process_data](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Tratamento_Exploracao/tratamento_data), apesar de tamber se encontrarem em ficheiro Python [Process_Data]
 
 #### Dados
-#### [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/blob/main/Datasets_ignorados/Daily_datasets/daily_diabetes.csv)
+#### [daily_diabetes.csv](https://github.com/luisabreu102030/AA2_Trabalho/tree/main/Datasets_utilizados/datasets_auxiliares)
 Nome da coluna|Significado|Valores possíveis
 --------------|-----------|-----------------
 `Date`|Registo diário | AAAA-MM--DD
